@@ -1,12 +1,13 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { usePortfolioData } from '../hooks/usePortfolioData.ts';
 import ChevronLeftIcon from '../components/icons/ChevronLeftIcon.tsx';
 import type { Project, ProjectImage, ProjectMedia, ProjectNavSection } from '../types.ts';
 import Lightbox from '../components/modals/Lightbox.tsx';
+import type { PortfolioData } from '../types.ts';
 
 interface ProjectDetailPageProps {
-  portfolioData?: any;
+  portfolioData?: PortfolioData;
 }
 
 const formatFallbackSectionLabel = (index: number) => `Section ${String(index + 1).padStart(2, '0')}`;
@@ -91,22 +92,37 @@ const getGridClass = (layout: ProjectNavSection['layout'] | undefined, itemCount
   return 'grid-cols-1 md:grid-cols-2 xl:grid-cols-3';
 };
 
-const ProjectDetailPage: React.FC<ProjectDetailPageProps> = () => {
-  const { portfolioData: propData } = { portfolioData: undefined } as ProjectDetailPageProps;
-  const { portfolioData } = usePortfolioData();
+const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ portfolioData: propData }) => {
+  const { portfolioData: hookData } = usePortfolioData();
   const { id } = useParams<{ id: string }>();
+  const location = useLocation();
   const navigate = useNavigate();
+  const portfolioData = propData || hookData;
+
+  const projectKey = useMemo(() => {
+    const queryProject = new URLSearchParams(location.search).get('project') || '';
+    return (id || queryProject || '').trim();
+  }, [id, location.search]);
+
+  const decodedProjectKey = useMemo(() => {
+    if (!projectKey) return '';
+    try {
+      return decodeURIComponent(projectKey);
+    } catch {
+      return projectKey;
+    }
+  }, [projectKey]);
 
   const project = useMemo<Project | null>(() => {
-    if (!id) return (portfolioData || propData)?.projects[0] || null;
+    if (!projectKey) return portfolioData.projects[0] || null;
 
     return (
-      (portfolioData || propData)?.projects.find((item: Project) => item.slug === id) ||
-      (portfolioData || propData)?.projects.find((item: Project) => String(item.id) === id) ||
-      (portfolioData || propData)?.projects.find((item: Project) => item.title === id) ||
+      portfolioData.projects.find((item: Project) => item.slug === projectKey || item.slug === decodedProjectKey) ||
+      portfolioData.projects.find((item: Project) => String(item.id) === projectKey || String(item.id) === decodedProjectKey) ||
+      portfolioData.projects.find((item: Project) => item.title === projectKey || item.title === decodedProjectKey) ||
       null
     );
-  }, [id, portfolioData, propData]);
+  }, [projectKey, decodedProjectKey, portfolioData]);
 
   const gallery = project?.images || [];
   const mediaAssets = project?.mediaAssets || gallery.map((image) => ({ ...image, type: 'image' as const }));

@@ -28,6 +28,10 @@ const App: React.FC = () => {
             element={<ProjectDetailPage portfolioData={portfolioData} />}
           />
           <Route
+            path="/project"
+            element={<ProjectDetailPage portfolioData={portfolioData} />}
+          />
+          <Route
             path="/life"
             element={<LifePage portfolioData={portfolioData} />}
           />

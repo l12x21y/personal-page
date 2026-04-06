@@ -5,9 +5,9 @@ import { PortfolioData } from '../types.ts';
 export const generatedPortfolioData: PortfolioData = {
   "name": "XINYAO LYU",
   "title": "Urban Planning",
-  "heroImageUrl": "/Personal Info/Cover.JPG",
+  "heroImageUrl": "Personal%20Info/Cover.JPG",
   "about": {
-    "photoUrl": "/Personal Info/个人照片.jpg",
+    "photoUrl": "Personal%20Info/%E4%B8%AA%E4%BA%BA%E7%85%A7%E7%89%87.jpg",
     "details": [
       {
         "id": 1,
@@ -108,25 +108,25 @@ export const generatedPortfolioData: PortfolioData = {
       "id": 1,
       "title": "My Experience",
       "text": "Through studio projects, internships, and interdisciplinary research, I have developed a practical workflow that balances spatial thinking, visual communication, and data-supported decision-making.",
-      "imageUrl": "/Personal Info/个人照片.jpg"
+      "imageUrl": "Personal%20Info/%E4%B8%AA%E4%BA%BA%E7%85%A7%E7%89%87.jpg"
     },
     {
       "id": 2,
       "title": "My Background",
       "text": "I study Urban Planning at Tongji University, with additional training in architecture-related innovation programs. This dual path helps me connect urban-scale strategy with human-scale design details.",
-      "imageUrl": "/Personal Info/Cover.jpg"
+      "imageUrl": "Personal%20Info/Cover.JPG"
     },
     {
       "id": 3,
       "title": "My Hobbies",
       "text": "Outside academic work, I enjoy documenting streets and light conditions through photography, and using music as a way to reset rhythm and keep creative focus.",
-      "imageUrl": "/Personal Info/个人照片.jpg"
+      "imageUrl": "Personal%20Info/%E4%B8%AA%E4%BA%BA%E7%85%A7%E7%89%87.jpg"
     },
     {
       "id": 4,
       "title": "My Aspirations",
       "text": "I hope to build meaningful urban and architectural experiences that are both analytically grounded and emotionally resonant, especially in contexts of renewal and public life.",
-      "imageUrl": "/Personal Info/Cover.jpg"
+      "imageUrl": "Personal%20Info/Cover.JPG"
     }
   ],
   "lifeSections": [
@@ -136,12 +136,12 @@ export const generatedPortfolioData: PortfolioData = {
       "text": "I like collecting city fragments through framing, texture, and changing weather. Most photos are casual observations from everyday routes.",
       "media": [
         {
-          "url": "/Personal Info/Cover.jpg",
+          "url": "Personal%20Info/Cover.JPG",
           "type": "image",
           "caption": "Urban light and atmosphere"
         },
         {
-          "url": "/Personal Info/个人照片.jpg",
+          "url": "Personal%20Info/%E4%B8%AA%E4%BA%BA%E7%85%A7%E7%89%87.jpg",
           "type": "image",
           "caption": "Portrait and mood"
         }
@@ -153,7 +153,7 @@ export const generatedPortfolioData: PortfolioData = {
       "text": "Music is part of my design process. I often build playlists to match different phases of ideation, modeling, and writing.",
       "media": [
         {
-          "url": "/Personal Info/Cover.jpg",
+          "url": "Personal%20Info/Cover.JPG",
           "type": "image",
           "caption": "Playlist moments"
         }
@@ -171,127 +171,127 @@ export const generatedPortfolioData: PortfolioData = {
       "role": "Architecture",
       "mediaAssets": [
         {
-          "url": "/Project/Riverside Gallery/2观景处示意图.jpg",
+          "url": "Project/Riverside%20Gallery/2%E8%A7%82%E6%99%AF%E5%A4%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg",
           "name": "2观景处示意图.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/3景观面示意图.jpg",
+          "url": "Project/Riverside%20Gallery/3%E6%99%AF%E8%A7%82%E9%9D%A2%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg",
           "name": "3景观面示意图.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/4室外示意图.jpg",
+          "url": "Project/Riverside%20Gallery/4%E5%AE%A4%E5%A4%96%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg",
           "name": "4室外示意图.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/16剖透视.jpg",
+          "url": "Project/Riverside%20Gallery/16%E5%89%96%E9%80%8F%E8%A7%86.jpg",
           "name": "16剖透视.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/17整体渲染2.jpg",
+          "url": "Project/Riverside%20Gallery/17%E6%95%B4%E4%BD%93%E6%B8%B2%E6%9F%932.jpg",
           "name": "17整体渲染2.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/18路视角.jpg",
+          "url": "Project/Riverside%20Gallery/18%E8%B7%AF%E8%A7%86%E8%A7%92.jpg",
           "name": "18路视角.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/20入口.jpg",
+          "url": "Project/Riverside%20Gallery/20%E5%85%A5%E5%8F%A3.jpg",
           "name": "20入口.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/21门厅.jpg",
+          "url": "Project/Riverside%20Gallery/21%E9%97%A8%E5%8E%85.jpg",
           "name": "21门厅.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/22树.jpg",
+          "url": "Project/Riverside%20Gallery/22%E6%A0%91.jpg",
           "name": "22树.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/23上楼视角.jpg",
+          "url": "Project/Riverside%20Gallery/23%E4%B8%8A%E6%A5%BC%E8%A7%86%E8%A7%92.jpg",
           "name": "23上楼视角.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/24景观面.jpg",
+          "url": "Project/Riverside%20Gallery/24%E6%99%AF%E8%A7%82%E9%9D%A2.jpg",
           "name": "24景观面.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/25连续展厅.jpg",
+          "url": "Project/Riverside%20Gallery/25%E8%BF%9E%E7%BB%AD%E5%B1%95%E5%8E%85.jpg",
           "name": "25连续展厅.jpg",
           "type": "image",
           "description": "连续展厅剖面空间示意。"
         },
         {
-          "url": "/Project/Riverside Gallery/26.1咖啡厅2.jpg",
+          "url": "Project/Riverside%20Gallery/26.1%E5%92%96%E5%95%A1%E5%8E%852.jpg",
           "name": "26.1咖啡厅2.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/27室外小景.jpg",
+          "url": "Project/Riverside%20Gallery/27%E5%AE%A4%E5%A4%96%E5%B0%8F%E6%99%AF.jpg",
           "name": "27室外小景.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/Cover.jpg",
+          "url": "Project/Riverside%20Gallery/Cover.jpg",
           "name": "Cover.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/Facade.jpg",
+          "url": "Project/Riverside%20Gallery/Facade.jpg",
           "name": "Facade.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/GeneralPlan.jpg",
+          "url": "Project/Riverside%20Gallery/GeneralPlan.jpg",
           "name": "GeneralPlan.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/Generate.png",
+          "url": "Project/Riverside%20Gallery/Generate.png",
           "name": "Generate.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/Location.jpg",
+          "url": "Project/Riverside%20Gallery/Location.jpg",
           "name": "Location.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/Plan.jpg",
+          "url": "Project/Riverside%20Gallery/Plan.jpg",
           "name": "Plan.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/Section.jpg",
+          "url": "Project/Riverside%20Gallery/Section.jpg",
           "name": "Section.jpg",
           "type": "image",
           "description": ""
@@ -332,107 +332,107 @@ export const generatedPortfolioData: PortfolioData = {
       ],
       "images": [
         {
-          "url": "/Project/Riverside Gallery/Cover.jpg",
+          "url": "Project/Riverside%20Gallery/Cover.jpg",
           "name": "Cover.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/2观景处示意图.jpg",
+          "url": "Project/Riverside%20Gallery/2%E8%A7%82%E6%99%AF%E5%A4%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg",
           "name": "2观景处示意图.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/3景观面示意图.jpg",
+          "url": "Project/Riverside%20Gallery/3%E6%99%AF%E8%A7%82%E9%9D%A2%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg",
           "name": "3景观面示意图.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/4室外示意图.jpg",
+          "url": "Project/Riverside%20Gallery/4%E5%AE%A4%E5%A4%96%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg",
           "name": "4室外示意图.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/16剖透视.jpg",
+          "url": "Project/Riverside%20Gallery/16%E5%89%96%E9%80%8F%E8%A7%86.jpg",
           "name": "16剖透视.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/17整体渲染2.jpg",
+          "url": "Project/Riverside%20Gallery/17%E6%95%B4%E4%BD%93%E6%B8%B2%E6%9F%932.jpg",
           "name": "17整体渲染2.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/18路视角.jpg",
+          "url": "Project/Riverside%20Gallery/18%E8%B7%AF%E8%A7%86%E8%A7%92.jpg",
           "name": "18路视角.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/20入口.jpg",
+          "url": "Project/Riverside%20Gallery/20%E5%85%A5%E5%8F%A3.jpg",
           "name": "20入口.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/21门厅.jpg",
+          "url": "Project/Riverside%20Gallery/21%E9%97%A8%E5%8E%85.jpg",
           "name": "21门厅.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/22树.jpg",
+          "url": "Project/Riverside%20Gallery/22%E6%A0%91.jpg",
           "name": "22树.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/23上楼视角.jpg",
+          "url": "Project/Riverside%20Gallery/23%E4%B8%8A%E6%A5%BC%E8%A7%86%E8%A7%92.jpg",
           "name": "23上楼视角.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/24景观面.jpg",
+          "url": "Project/Riverside%20Gallery/24%E6%99%AF%E8%A7%82%E9%9D%A2.jpg",
           "name": "24景观面.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/25连续展厅.jpg",
+          "url": "Project/Riverside%20Gallery/25%E8%BF%9E%E7%BB%AD%E5%B1%95%E5%8E%85.jpg",
           "name": "25连续展厅.jpg",
           "description": "连续展厅剖面空间示意。"
         },
         {
-          "url": "/Project/Riverside Gallery/26.1咖啡厅2.jpg",
+          "url": "Project/Riverside%20Gallery/26.1%E5%92%96%E5%95%A1%E5%8E%852.jpg",
           "name": "26.1咖啡厅2.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/27室外小景.jpg",
+          "url": "Project/Riverside%20Gallery/27%E5%AE%A4%E5%A4%96%E5%B0%8F%E6%99%AF.jpg",
           "name": "27室外小景.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/Facade.jpg",
+          "url": "Project/Riverside%20Gallery/Facade.jpg",
           "name": "Facade.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/GeneralPlan.jpg",
+          "url": "Project/Riverside%20Gallery/GeneralPlan.jpg",
           "name": "GeneralPlan.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/Generate.png",
+          "url": "Project/Riverside%20Gallery/Generate.png",
           "name": "Generate.png",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/Location.jpg",
+          "url": "Project/Riverside%20Gallery/Location.jpg",
           "name": "Location.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/Plan.jpg",
+          "url": "Project/Riverside%20Gallery/Plan.jpg",
           "name": "Plan.jpg",
           "description": ""
         },
         {
-          "url": "/Project/Riverside Gallery/Section.jpg",
+          "url": "Project/Riverside%20Gallery/Section.jpg",
           "name": "Section.jpg",
           "description": ""
         }
@@ -454,151 +454,151 @@ export const generatedPortfolioData: PortfolioData = {
       "role": "Architecture",
       "mediaAssets": [
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_20.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_20.png",
           "name": "（已压缩）A4总_20.png",
           "type": "image",
           "description": "项目总览版面。"
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_21.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_21.png",
           "name": "（已压缩）A4总_21.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_22.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_22.png",
           "name": "（已压缩）A4总_22.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_23.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_23.png",
           "name": "（已压缩）A4总_23.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_24.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_24.png",
           "name": "（已压缩）A4总_24.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_25.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_25.png",
           "name": "（已压缩）A4总_25.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_26.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_26.png",
           "name": "（已压缩）A4总_26.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_27.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_27.png",
           "name": "（已压缩）A4总_27.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_28.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_28.png",
           "name": "（已压缩）A4总_28.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_29.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_29.png",
           "name": "（已压缩）A4总_29.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_30.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_30.png",
           "name": "（已压缩）A4总_30.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_31.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_31.png",
           "name": "（已压缩）A4总_31.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_32.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_32.png",
           "name": "（已压缩）A4总_32.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_33.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_33.png",
           "name": "（已压缩）A4总_33.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_34.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_34.png",
           "name": "（已压缩）A4总_34.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_35.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_35.png",
           "name": "（已压缩）A4总_35.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_39.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_39.png",
           "name": "（已压缩）A4总_39.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_40.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_40.png",
           "name": "（已压缩）A4总_40.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_41.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_41.png",
           "name": "（已压缩）A4总_41.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_42.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_42.png",
           "name": "（已压缩）A4总_42.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_43.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_43.png",
           "name": "（已压缩）A4总_43.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_44.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_44.png",
           "name": "（已压缩）A4总_44.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_63.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_63.png",
           "name": "（已压缩）A4总_63.png",
           "type": "image",
           "description": "项目综合展示图。"
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_64.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_64.png",
           "name": "（已压缩）A4总_64.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_65.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_65.png",
           "name": "（已压缩）A4总_65.png",
           "type": "image",
           "description": ""
@@ -607,127 +607,127 @@ export const generatedPortfolioData: PortfolioData = {
       "navSections": [],
       "images": [
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_20.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_20.png",
           "name": "（已压缩）A4总_20.png",
           "description": "项目总览版面。"
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_21.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_21.png",
           "name": "（已压缩）A4总_21.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_22.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_22.png",
           "name": "（已压缩）A4总_22.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_23.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_23.png",
           "name": "（已压缩）A4总_23.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_24.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_24.png",
           "name": "（已压缩）A4总_24.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_25.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_25.png",
           "name": "（已压缩）A4总_25.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_26.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_26.png",
           "name": "（已压缩）A4总_26.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_27.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_27.png",
           "name": "（已压缩）A4总_27.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_28.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_28.png",
           "name": "（已压缩）A4总_28.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_29.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_29.png",
           "name": "（已压缩）A4总_29.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_30.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_30.png",
           "name": "（已压缩）A4总_30.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_31.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_31.png",
           "name": "（已压缩）A4总_31.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_32.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_32.png",
           "name": "（已压缩）A4总_32.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_33.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_33.png",
           "name": "（已压缩）A4总_33.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_34.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_34.png",
           "name": "（已压缩）A4总_34.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_35.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_35.png",
           "name": "（已压缩）A4总_35.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_39.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_39.png",
           "name": "（已压缩）A4总_39.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_40.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_40.png",
           "name": "（已压缩）A4总_40.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_41.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_41.png",
           "name": "（已压缩）A4总_41.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_42.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_42.png",
           "name": "（已压缩）A4总_42.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_43.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_43.png",
           "name": "（已压缩）A4总_43.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_44.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_44.png",
           "name": "（已压缩）A4总_44.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_63.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_63.png",
           "name": "（已压缩）A4总_63.png",
           "description": "项目综合展示图。"
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_64.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_64.png",
           "name": "（已压缩）A4总_64.png",
           "description": ""
         },
         {
-          "url": "/Project/Flexible Climate House/（已压缩）A4总_65.png",
+          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_65.png",
           "name": "（已压缩）A4总_65.png",
           "description": ""
         }

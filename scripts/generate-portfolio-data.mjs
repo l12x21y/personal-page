@@ -6,12 +6,48 @@ const root = process.cwd();
 const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif', '.gif', '.bmp', '.svg']);
 const VIDEO_EXTS = new Set(['.mp4', '.mov', '.webm', '.m4v']);
 
+function encodePathSegment(segment) {
+  try {
+    return encodeURIComponent(decodeURIComponent(segment));
+  } catch {
+    return encodeURIComponent(segment);
+  }
+}
+
+function normalizeAssetUrl(url) {
+  const cleaned = String(url || '')
+    .trim()
+    .replace(/\\/g, '/')
+    .replace(/^\/+/, '');
+
+  if (!cleaned) return '';
+
+  return cleaned
+    .split('/')
+    .filter(Boolean)
+    .map(encodePathSegment)
+    .join('/');
+}
+
+function normalizePersonalInfoUrl(url, personalFileNames) {
+  const raw = String(url || '').trim().replace(/\\/g, '/').replace(/^\/+/, '');
+  if (!raw) return '';
+
+  if (!/^personal info\//i.test(raw)) {
+    return normalizeAssetUrl(raw);
+  }
+
+  const fileName = raw.split('/').pop() || '';
+  const resolvedName = personalFileNames.find((name) => name.toLowerCase() === fileName.toLowerCase()) || fileName;
+  return normalizeAssetUrl(`Personal Info/${resolvedName}`);
+}
+
 const defaultData = {
   name: 'XINYAO LYU',
   title: 'Urban Planning',
-  heroImageUrl: '/Personal Info/Cover.jpg',
+  heroImageUrl: normalizeAssetUrl('Personal Info/Cover.JPG'),
   about: {
-    photoUrl: '/Personal Info/个人照片.jpg',
+    photoUrl: normalizeAssetUrl('Personal Info/个人照片.jpg'),
     details: [
       { id: 1, label: 'Birthday', value: 'December 12, 2004' },
       { id: 2, label: 'School', value: 'Tongji University' },
@@ -45,25 +81,25 @@ const defaultData = {
       id: 1,
       title: 'My Experience',
       text: 'A growing collection of studio work, internship practice, and interdisciplinary exploration.',
-      imageUrl: '/Personal Info/个人照片.jpg',
+      imageUrl: normalizeAssetUrl('Personal Info/个人照片.jpg'),
     },
     {
       id: 2,
       title: 'My Background',
       text: 'Urban planning training with architecture-oriented experimentation and research methods.',
-      imageUrl: '/Personal Info/Cover.jpg',
+      imageUrl: normalizeAssetUrl('Personal Info/Cover.JPG'),
     },
     {
       id: 3,
       title: 'My Hobbies',
       text: 'Photography, music, and observing everyday urban details that inspire design.',
-      imageUrl: '/Personal Info/个人照片.jpg',
+      imageUrl: normalizeAssetUrl('Personal Info/个人照片.jpg'),
     },
     {
       id: 4,
       title: 'My Aspirations',
       text: 'To create design work that is both conceptually rigorous and deeply human-centered.',
-      imageUrl: '/Personal Info/Cover.jpg',
+      imageUrl: normalizeAssetUrl('Personal Info/Cover.JPG'),
     },
   ],
   lifeSections: [
@@ -72,7 +108,7 @@ const defaultData = {
       title: 'Photography',
       text: 'Capturing light, texture, and moments from daily city life.',
       media: [
-        { url: '/Personal Info/Cover.jpg', type: 'image', caption: 'Urban light and atmosphere' },
+        { url: normalizeAssetUrl('Personal Info/Cover.JPG'), type: 'image', caption: 'Urban light and atmosphere' },
       ],
     },
     {
@@ -80,7 +116,7 @@ const defaultData = {
       title: 'Music',
       text: 'Music as a background rhythm for ideation and design concentration.',
       media: [
-        { url: '/Personal Info/个人照片.jpg', type: 'image', caption: 'Playlist moments' },
+        { url: normalizeAssetUrl('Personal Info/个人照片.jpg'), type: 'image', caption: 'Playlist moments' },
       ],
     },
   ],
@@ -368,8 +404,8 @@ function pickPersonalImages(personalDir) {
     || cover;
 
   return {
-    hero: `/Personal Info/${cover}`,
-    photo: `/Personal Info/${photo}`,
+    hero: normalizeAssetUrl(`Personal Info/${cover}`),
+    photo: normalizeAssetUrl(`Personal Info/${photo}`),
   };
 }
 
@@ -424,13 +460,13 @@ function loadProjects(projectRoot, datasetProjectMetaList) {
       : imageNames;
 
     const images = orderedImageNames.map((name) => ({
-      url: `/Project/${folder}/${name}`,
+      url: normalizeAssetUrl(`Project/${folder}/${name}`),
       name,
       description: typeof imageDescriptionMap[name] === 'string' ? imageDescriptionMap[name] : '',
     }));
 
     const mediaAssets = mediaNames.map((name) => ({
-      url: `/Project/${folder}/${name}`,
+      url: normalizeAssetUrl(`Project/${folder}/${name}`),
       name,
       type: getMediaType(name),
       description: typeof imageDescriptionMap[name] === 'string' ? imageDescriptionMap[name] : '',
@@ -462,7 +498,11 @@ function main() {
   const aboutSections = normalizeAboutSections(readJsonFile(path.join(datasetDir, 'about-sections.json')));
   const lifeSections = normalizeLifeSections(readJsonFile(path.join(datasetDir, 'life-sections.json')));
 
-  const personal = pickPersonalImages(path.join(root, 'Personal Info'));
+  const personalDir = path.join(root, 'Personal Info');
+  const personalFileNames = safeReadDir(personalDir)
+    .filter((d) => d.isFile())
+    .map((d) => d.name);
+  const personal = pickPersonalImages(personalDir);
   const projects = loadProjects(path.join(root, 'Project'), datasetProjectsMeta);
 
   const datasetWork = normalizeArrayJson(readJsonFile(path.join(datasetDir, 'work-experience.json')));
@@ -528,8 +568,19 @@ function main() {
       researchExperience,
       awards,
     },
-    aboutSections,
-    lifeSections,
+    aboutSections: aboutSections.map((section) => ({
+      ...section,
+      imageUrl: normalizePersonalInfoUrl(section.imageUrl, personalFileNames),
+    })),
+    lifeSections: lifeSections.map((section) => ({
+      ...section,
+      media: Array.isArray(section.media)
+        ? section.media.map((item) => ({
+            ...item,
+            url: normalizePersonalInfoUrl(item.url, personalFileNames),
+          }))
+        : [],
+    })),
     projects: projects.length > 0 ? projects : defaultData.projects,
     skills,
     contact: {
