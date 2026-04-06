@@ -25,8 +25,10 @@ const shouldRegenerate = (filePath: string): boolean => {
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
+    const isProd = mode === 'production';
     return {
-      base: '/personal-page/',
+      base: isProd ? '/personal-page/' : '/',
+      publicDir: 'public',
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
