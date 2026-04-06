@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage.tsx';
 import AboutPage from './pages/AboutPage.tsx';
 import ResumePage from './pages/ResumePage.tsx';
 import LifePage from './pages/LifePage.tsx';
+import ProjectDetailPage from './pages/ProjectDetailPage.tsx';
 import { usePortfolioData } from './hooks/usePortfolioData.ts';
 
 const App: React.FC = () => {
@@ -21,6 +22,10 @@ const App: React.FC = () => {
           <Route
             path="/"
             element={<HomePage portfolioData={portfolioData} isViewMode={isViewMode} />}
+          />
+          <Route
+            path="/project/:id"
+            element={<ProjectDetailPage portfolioData={portfolioData} />}
           />
           <Route
             path="/life"

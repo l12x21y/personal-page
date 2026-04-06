@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import HeroSection from '../components/HeroSection.tsx';
 import ProjectsSection from '../components/ProjectsSection.tsx';
 import { PortfolioData } from '../types.ts';
@@ -9,8 +10,10 @@ interface HomePageProps {
 }
 
 const HomePage: React.FC<HomePageProps> = ({ portfolioData, isViewMode }) => {
+	const navigate = useNavigate();
+
 	const openProjectDetail = (projectSlug: string | number) => {
-		window.location.href = `project.html?project=${encodeURIComponent(String(projectSlug))}`;
+		navigate(`/project/${encodeURIComponent(String(projectSlug))}`);
 	};
 
 	return (

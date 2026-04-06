@@ -1,13 +1,13 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { usePortfolioData } from '../hooks/usePortfolioData.ts';
 import ChevronLeftIcon from '../components/icons/ChevronLeftIcon.tsx';
 import type { Project, ProjectImage, ProjectMedia, ProjectNavSection } from '../types.ts';
 import Lightbox from '../components/modals/Lightbox.tsx';
 
-const getProjectKey = () => {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('project') || '';
-};
+interface ProjectDetailPageProps {
+  portfolioData?: any;
+}
 
 const formatFallbackSectionLabel = (index: number) => `Section ${String(index + 1).padStart(2, '0')}`;
 
@@ -91,20 +91,22 @@ const getGridClass = (layout: ProjectNavSection['layout'] | undefined, itemCount
   return 'grid-cols-1 md:grid-cols-2 xl:grid-cols-3';
 };
 
-const ProjectDetailPage: React.FC = () => {
+const ProjectDetailPage: React.FC<ProjectDetailPageProps> = () => {
+  const { portfolioData: propData } = { portfolioData: undefined } as ProjectDetailPageProps;
   const { portfolioData } = usePortfolioData();
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
 
   const project = useMemo<Project | null>(() => {
-    const key = getProjectKey();
-    if (!key) return portfolioData.projects[0] || null;
+    if (!id) return (portfolioData || propData)?.projects[0] || null;
 
     return (
-      portfolioData.projects.find((item) => item.slug === key) ||
-      portfolioData.projects.find((item) => String(item.id) === key) ||
-      portfolioData.projects.find((item) => item.title === key) ||
+      (portfolioData || propData)?.projects.find((item: Project) => item.slug === id) ||
+      (portfolioData || propData)?.projects.find((item: Project) => String(item.id) === id) ||
+      (portfolioData || propData)?.projects.find((item: Project) => item.title === id) ||
       null
     );
-  }, [portfolioData.projects]);
+  }, [id, portfolioData, propData]);
 
   const gallery = project?.images || [];
   const mediaAssets = project?.mediaAssets || gallery.map((image) => ({ ...image, type: 'image' as const }));
@@ -147,10 +149,10 @@ const ProjectDetailPage: React.FC = () => {
           <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-3">Project</p>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Project not found</h1>
           <p className="text-gray-600 mb-6">The requested project page could not be found.</p>
-          <a href="index.html" className="inline-flex items-center gap-2 rounded-full bg-black text-white px-5 py-3 font-medium hover:bg-gray-800 transition-colors">
+          <button onClick={() => navigate('/')} className="inline-flex items-center gap-2 rounded-full bg-black text-white px-5 py-3 font-medium hover:bg-gray-800 transition-colors">
             <ChevronLeftIcon className="w-4 h-4" />
             Back to portfolio
-          </a>
+          </button>
         </div>
       </div>
     );
@@ -162,10 +164,10 @@ const ProjectDetailPage: React.FC = () => {
         <div className="grid gap-6 lg:grid-cols-[280px_minmax(0,1fr)]">
           <aside className="lg:sticky lg:top-6 h-fit border-r border-black/10 pr-4 lg:pr-6">
             <div className="pt-1">
-              <a href="index.html" className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-black transition-colors mb-5">
+              <button onClick={() => navigate('/')} className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-black transition-colors mb-5">
                 <ChevronLeftIcon className="w-4 h-4" />
                 Back to portfolio
-              </a>
+              </button>
               <p className="text-[11px] uppercase tracking-[0.28em] text-gray-500">Project Detail</p>
               <h1 className="mt-3 text-3xl leading-tight font-bold text-gray-950">{project.title}</h1>
               {project.description && <p className="mt-3 text-sm leading-6 text-gray-600">{project.description}</p>}
