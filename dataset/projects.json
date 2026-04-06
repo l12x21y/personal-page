@@ -1,0 +1,68 @@
+[
+  {
+    "folder": "Riverside Gallery",
+    "title": "Riverside Gallery",
+    "tools": ["SketchUp", "V-Ray", "Procreate"],
+    "skills": ["Conceptual Design", "Spatial Analysis"],
+    "tags": ["Architecture", "Exhibition", "Individual","Studio"],
+    "time": "2024.09-2024.10",
+    "workType": "Individual",
+    "role": "Architecture",
+    "description": "围绕场地环境的展陈建筑方案，关注流线组织与空间体验。",
+    "cover": "Cover.jpg",
+    "navSections": [
+      {
+        "title": "概念与场地",
+        "text": "项目背景、区位与设计出发点。",
+        "layout": "grid-3",
+        "mediaNames": ["Cover.jpg", "Location.jpg", "Generate.png"]
+      },
+      {
+        "title": "技术图",
+        "text": "技术图类别下可放多张图并同排展示。",
+        "layout": "grid-4",
+        "mediaNames": ["GeneralPlan.jpg", "Plan.jpg", "Facade.jpg", "Section.jpg"]
+      },
+      {
+        "title": "空间体验",
+        "layout": "grid-3",
+        "mediaNames": ["20入口.jpg", "21门厅.jpg", "24景观面.jpg", "25连续展厅.jpg"]
+      }
+    ],
+    "imageDescriptions": {
+      "1封面效果图.jpg": "项目整体封面视角。",
+      "14功能流线图.jpg": "展示公共与私密功能分区及流线关系。",
+      "15气泡图.jpg": "空间关系与联系强弱分析。",
+      "19平面.jpg": "平面布局与主要功能区组织。",
+      "25连续展厅.jpg": "连续展厅剖面空间示意。"
+    }
+  },
+  {
+    "folder": "Flexible Climate House",
+    "title": "Flexible Climate House",
+    "tools": ["Rhino", "Grasshopper","AutoCAD","D5"],
+    "skills": ["Environmental Analysis", "Systems Thinking"],
+    "tags": ["Teamwork", "Climate", "Prototype","Architecture"],
+    "time": "2024.09-2025.01",
+    "workType": "Teamwork",
+    "role": "Architecture",
+    "description": "面向湿热与风环境的可变住宅原型研究。",
+    "cover": "（已压缩）A4总_20.png",
+    "imageDescriptions": {
+      "（已压缩）A4总_20.png": "项目总览版面。",
+      "（已压缩）A4总_63.png": "项目综合展示图。"
+    }
+  },
+  {
+    "folder": "12",
+    "title": "Project 12",
+    "tools": [],
+    "skills": [],
+    "tags": ["12"],
+    "time": "",
+    "workType": "",
+    "role": "",
+    "description": "Project 12",
+    "imageDescriptions": {}
+  }
+]

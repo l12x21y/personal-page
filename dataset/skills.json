@@ -1,0 +1,30 @@
+[
+  { "name": "AutoCAD", "level": 85 },
+  { "name": "SketchUp", "level": 85 },
+  { "name": "Rhino", "level": 80 },
+  { "name": "Blender", "level": 80 },
+
+  { "name": "Figma", "level": 88 },
+  { "name": "Photoshop", "level": 85 },
+  { "name": "Illustrator", "level": 85 },
+  { "name": "InDesign", "level": 80 },
+  { "name": "V-Ray", "level": 78 },
+  { "name": "D5", "level": 75 },
+
+  { "name": "Python", "level": 85 },
+  { "name": "JavaScript", "level": 80 },
+  { "name": "SQL", "level": 75 },
+  { "name": "React", "level": 80 },
+  { "name": "Node.js", "level": 75 },
+
+  { "name": "Leadership", "level": 78 },
+  { "name": "Event Management", "level": 75 },
+  { "name": "Writing", "level": 82 },
+  { "name": "Public Speaking", "level": 76 },
+  { "name": "Time Management", "level": 80 },
+
+  { "name": "Urban Analysis", "level": 90 },
+  { "name": "Spatial Design", "level": 88 },
+  { "name": "Rendering", "level": 85 },
+  { "name": "Research Methods", "level": 86 }
+]

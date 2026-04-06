@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-padding-top: 5rem;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg shadow-md border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <h1 id="header-name" class="text-2xl font-bold font-serif tracking-wider text-black">XINYAO LYU</h1>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#work-experience" class="text-gray-700 hover:text-black font-medium">Work</a>
+                    <a href="#research-experience" class="text-gray-700 hover:text-black font-medium">Research</a>
+                    <a href="#awards" class="text-gray-700 hover:text-black font-medium">Award</a>
+                    <a href="index.html" class="text-gray-700 hover:underline font-medium px-3 py-2 transition-all duration-150" aria-label="Back to portfolio">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform rotate-180"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow py-16 space-y-20">
+        <section id="work-experience"></section>
+        <section id="research-experience"></section>
+        <section id="awards"></section>
+        <section id="skills"></section>
+    </main>
+    <footer class="py-8 border-t border-gray-200">
+        <div id="footer-text" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sanitize = (text) => {
+                if (!text) return '';
+                const el = document.createElement('div');
+                el.textContent = text;
+                return el.innerHTML.replace(/\n/g, '<br>');
+            };
+
+            const loadData = () => {
+                try {
+                    const hash = window.location.hash.substring(1);
+                    // allow either raw base64 after 'data=' or full query-like hash
+                    if (!hash) throw new Error('No data found.');
+
+                    let encodedData = null;
+                    if (hash.startsWith('data=')) {
+                        encodedData = hash.slice(5);
+                    } else {
+                        const params = new URLSearchParams(hash);
+                        encodedData = params.get('data');
+                    }
+
+                    if (!encodedData) throw new Error('Data parameter is missing.');
+
+                    // Try safe decoding for base64 unicode (handles various browser behaviors)
+                    const safeDecode = (str) => {
+                        try {
+                            // Preferred: percent-encoding of atob output
+                            const binary = atob(str);
+                            const percentEncoded = Array.prototype.map.call(binary, (c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join('');
+                            return decodeURIComponent(percentEncoded);
+                        } catch (e) {
+                            // Fallback: try legacy decode
+                            try { return decodeURIComponent(escape(atob(str))); } catch (e2) { throw e; }
+                        }
+                    };
+
+                    const jsonText = safeDecode(encodedData);
+                    return JSON.parse(jsonText);
+                } catch (error) {
+                    console.error("Failed to load portfolio data:", error);
+                    // Fallback: use example placeholder data (do not mutate DOM structure)
+                    return {
+                        name: 'XINYAO LYU',
+                        about: {
+                            workExperience: [
+                                { id: 1, role: 'Project Lead', organization: 'Example Studio', date: '2023', description: 'Led conceptual design and coordination.' }
+                            ],
+                            researchExperience: [
+                                { id: 2, role: '主导项目、设计实验、理论框架搭建', organization: '商业街道更新研究', date: '2025.7-2026.3', description: '搭建基于 AI 生成街道立面，使用近红外设备监测人的愉悦程度，快速筛选评价方案并形成评价框架。' }
+                            ],
+                            awards: [
+                                { id: 3, name: 'Design Merit', issuer: 'Example Award', date: '2021' }
+                            ]
+                        },
+                        skills: [
+                            { id: 1, name: 'Urban Analysis', level: 90 },
+                            { id: 2, name: 'Rendering', level: 85 }
+                        ]
+                    };
+                }
+            };
+
+            const renderExperience = (containerId, title, experiences) => {
+                const container = document.getElementById(containerId);
+                if (!experiences || experiences.length === 0) {
+                    container.style.display = 'none';
+                    return;
+                }
+                const previewCount = 2;
+                const listId = `${containerId}-list`;
+                const moreBtnId = `${containerId}-more-btn`;
+                const html = `
+                    <div class="flex items-center mb-12">
+                        <h2 class="text-4xl font-bold text-black tracking-tight">${title}</h2>
+                        <div class="flex-grow h-px bg-gray-300 ml-6"></div>
+                    </div>
+                    <div id="${listId}" class="space-y-6">
+                        ${experiences.slice(0, previewCount).map(exp => `
+                            <div class="p-6 bg-white rounded-lg border border-gray-200">
+                                <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-1">
+                                    <h4 class="text-xl font-bold text-gray-900">${sanitize(exp.role)}</h4>
+                                    <p class="text-sm text-gray-600 mt-1 sm:mt-0">${sanitize(exp.date)}</p>
+                                </div>
+                                <p class="font-semibold text-gray-700 mb-2">${sanitize(exp.organization)}</p>
+                                <p class="text-gray-700">${sanitize(exp.description)}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    ${experiences.length > previewCount ? `<div class="mt-4 text-center"><button id="${moreBtnId}" class="text-gray-600 hover:underline bg-transparent border-0 p-0">More</button></div>` : ''}
+                `;
+                container.innerHTML = html;
+
+                if (experiences.length > previewCount) {
+                    const listEl = document.getElementById(listId);
+                    const btn = document.getElementById(moreBtnId);
+                    let expanded = false;
+                    btn.addEventListener('click', () => {
+                        if (!expanded) {
+                            // append remaining items
+                            const restHtml = experiences.slice(previewCount).map(exp => `
+                                <div class="p-6 bg-white rounded-lg border border-gray-200">
+                                    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-1">
+                                        <h4 class="text-xl font-bold text-gray-900">${sanitize(exp.role)}</h4>
+                                        <p class="text-sm text-gray-600 mt-1 sm:mt-0">${sanitize(exp.date)}</p>
+                                    </div>
+                                    <p class="font-semibold text-gray-700 mb-2">${sanitize(exp.organization)}</p>
+                                    <p class="text-gray-700">${sanitize(exp.description)}</p>
+                                </div>
+                            `).join('');
+                            listEl.insertAdjacentHTML('beforeend', restHtml);
+                            btn.textContent = 'Less';
+                            expanded = true;
+                        } else {
+                            // collapse back to preview
+                            listEl.innerHTML = experiences.slice(0, previewCount).map(exp => `
+                                <div class="p-6 bg-white rounded-lg border border-gray-200">
+                                    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-1">
+                                        <h4 class="text-xl font-bold text-gray-900">${sanitize(exp.role)}</h4>
+                                        <p class="text-sm text-gray-600 mt-1 sm:mt-0">${sanitize(exp.date)}</p>
+                                    </div>
+                                    <p class="font-semibold text-gray-700 mb-2">${sanitize(exp.organization)}</p>
+                                    <p class="text-gray-700">${sanitize(exp.description)}</p>
+                                </div>
+                            `).join('');
+                            btn.textContent = 'More';
+                            expanded = false;
+                        }
+                    });
+                }
+            };
+
+            const renderAwards = (awards) => {
+                const container = document.getElementById('awards');
+                if (!awards || awards.length === 0) {
+                    container.style.display = 'none';
+                    return;
+                }
+                const previewCount = 2;
+                const listId = `awards-list`;
+                const moreBtnId = `awards-more-btn`;
+                const html = `
+                    <div class="flex items-center mb-12">
+                        <h2 class="text-4xl font-bold text-black tracking-tight">Awards & Honors</h2>
+                        <div class="flex-grow h-px bg-gray-300 ml-6"></div>
+                    </div>
+                    <div id="${listId}" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        ${awards.slice(0, previewCount).map(award => `
+                            <div class="p-4 bg-white rounded-lg border border-gray-200 flex justify-between items-center">
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-900">${sanitize(award.name)}</h4>
+                                    <p class="text-gray-700">${sanitize(award.issuer)}</p>
+                                </div>
+                                <p class="text-gray-600">${sanitize(award.date)}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    ${awards.length > previewCount ? `<div class="mt-4 text-center"><button id="${moreBtnId}" class="text-gray-600 hover:underline bg-transparent border-0 p-0">More</button></div>` : ''}
+                `;
+                container.innerHTML = html;
+
+                if (awards.length > previewCount) {
+                    const listEl = document.getElementById(listId);
+                    const btn = document.getElementById(moreBtnId);
+                    let expanded = false;
+                    btn.addEventListener('click', () => {
+                        if (!expanded) {
+                            const restHtml = awards.slice(previewCount).map(award => `
+                                <div class="p-4 bg-white rounded-lg border border-gray-200 flex justify-between items-center">
+                                    <div>
+                                        <h4 class="text-xl font-bold text-gray-900">${sanitize(award.name)}</h4>
+                                        <p class="text-gray-700">${sanitize(award.issuer)}</p>
+                                    </div>
+                                    <p class="text-gray-600">${sanitize(award.date)}</p>
+                                </div>
+                            `).join('');
+                            listEl.insertAdjacentHTML('beforeend', restHtml);
+                            btn.textContent = 'Less';
+                            expanded = true;
+                        } else {
+                            listEl.innerHTML = awards.slice(0, previewCount).map(award => `
+                                <div class="p-4 bg-white rounded-lg border border-gray-200 flex justify-between items-center">
+                                    <div>
+                                        <h4 class="text-xl font-bold text-gray-900">${sanitize(award.name)}</h4>
+                                        <p class="text-gray-700">${sanitize(award.issuer)}</p>
+                                    </div>
+                                    <p class="text-gray-600">${sanitize(award.date)}</p>
+                                </div>
+                            `).join('');
+                            btn.textContent = 'More';
+                            expanded = false;
+                        }
+                    });
+                }
+            };
+            
+            const renderSkills = (skills) => {
+                const container = document.getElementById('skills');
+                if (!skills || skills.length === 0) {
+                    container.style.display = 'none';
+                    return;
+                }
+
+                const categories = {
+                    'Prototyping': ['AutoCAD', 'SketchUp', 'Rhino', 'Blender'],
+                    'Design': ['Figma', 'Photoshop', 'Illustrator', 'InDesign', 'V-Ray', 'D5'],
+                    'Coding': ['Python', 'JavaScript', 'SQL', 'React', 'Node.js']
+                };
+                const softSkills = ['Leadership', 'Event Management', 'Writing', 'Public Speaking', 'Time Management'];
+
+                const levelMap = {};
+                skills.forEach(s => { if (s && s.name) levelMap[s.name.trim()] = Number(s.level) || 0; });
+
+                const html = `
+                    <div class="flex items-center mb-12">
+                        <h2 class="text-4xl font-bold text-black tracking-tight">My Expertise</h2>
+                        <div class="flex-grow h-px bg-gray-300 ml-6"></div>
+                    </div>
+                    <div class="space-y-8 mb-8">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            ${Object.entries(categories).map(([cat, items]) => `
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-3">${cat}</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        ${items.map(it => `<span class="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-sm">${sanitize(it)}</span>`).join('')}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 mb-4">Soft Skills</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                                ${softSkills.map((name, idx) => `
+                                    <div>
+                                        <div class="flex justify-between items-end mb-1">
+                                            <h4 class="font-semibold text-gray-900">${sanitize(name)}</h4>
+                                            <p class="text-sm text-gray-600">${levelMap[name] ?? 75}%</p>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                                            <div class="skill-bar bg-black h-2 rounded-full transition-all ease-out duration-1000" style="width: 0%;" data-level="${levelMap[name] ?? 75}"></div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                container.innerHTML = html;
+            };
+            
+            const setupSkillAnimations = () => {
+                 const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const bar = entry.target;
+                            bar.style.width = `${bar.dataset.level}%`;
+                            observer.unobserve(bar);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                document.querySelectorAll('.skill-bar').forEach(bar => observer.observe(bar));
+            };
+
+
+            const data = loadData();
+            if (data) {
+                document.title = `${sanitize(data.name)} | About Me`;
+                document.getElementById('header-name').textContent = sanitize(data.name);
+                document.getElementById('footer-text').innerHTML = `<p>&copy; ${new Date().getFullYear()} ${sanitize(data.name)}. All Rights Reserved.</p>`;
+                
+                renderExperience('work-experience', 'Work Experience', data.about?.workExperience);
+                renderExperience('research-experience', 'Research Experience', data.about?.researchExperience);
+                renderAwards(data.about?.awards);
+                renderSkills(data.skills);
+                setupSkillAnimations();
+            }
+        });
+    </script>
+</body>
+</html>

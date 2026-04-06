@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Photography",
+    "text": "I like collecting city fragments through framing, texture, and changing weather. Most photos are casual observations from everyday routes.",
+    "media": [
+      {
+        "url": "/Personal Info/Cover.jpg",
+        "type": "image",
+        "caption": "Urban light and atmosphere"
+      },
+      {
+        "url": "/Personal Info/个人照片.jpg",
+        "type": "image",
+        "caption": "Portrait and mood"
+      }
+    ]
+  },
+  {
+    "title": "Music",
+    "text": "Music is part of my design process. I often build playlists to match different phases of ideation, modeling, and writing.",
+    "media": [
+      {
+        "url": "/Personal Info/Cover.jpg",
+        "type": "image",
+        "caption": "Playlist moments"
+      }
+    ]
+  }
+]

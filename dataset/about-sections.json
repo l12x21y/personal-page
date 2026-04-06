@@ -1,0 +1,22 @@
+[
+  {
+    "title": "My Experience",
+    "text": "Through studio projects, internships, and interdisciplinary research, I have developed a practical workflow that balances spatial thinking, visual communication, and data-supported decision-making.",
+    "imageUrl": "/Personal Info/个人照片.jpg"
+  },
+  {
+    "title": "My Background",
+    "text": "I study Urban Planning at Tongji University, with additional training in architecture-related innovation programs. This dual path helps me connect urban-scale strategy with human-scale design details.",
+    "imageUrl": "/Personal Info/Cover.jpg"
+  },
+  {
+    "title": "My Hobbies",
+    "text": "Outside academic work, I enjoy documenting streets and light conditions through photography, and using music as a way to reset rhythm and keep creative focus.",
+    "imageUrl": "/Personal Info/个人照片.jpg"
+  },
+  {
+    "title": "My Aspirations",
+    "text": "I hope to build meaningful urban and architectural experiences that are both analytically grounded and emotionally resonant, especially in contexts of renewal and public life.",
+    "imageUrl": "/Personal Info/Cover.jpg"
+  }
+]
