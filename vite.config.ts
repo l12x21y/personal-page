@@ -38,12 +38,7 @@ export default defineConfig(({ mode }) => {
       },
       build: {
         rollupOptions: {
-          input: {
-            main: path.resolve(__dirname, 'index.html'),
-            project: path.resolve(__dirname, 'project.html'),
-            introduce: path.resolve(__dirname, 'introduce.html'),
-            portfolio: path.resolve(__dirname, 'portfolio.html'),
-          },
+          input: path.resolve(__dirname, 'index.html'),
         },
       },
       plugins: [
