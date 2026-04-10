@@ -10,27 +10,45 @@ interface LifePageProps {
 
 const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
   const { lifeSections } = portfolioData;
-  const initialIndexMap = useMemo(
-    () => Object.fromEntries(lifeSections.map((section) => [section.id, { left: 0, right: 0 }])) as Record<number, { left: number; right: number }>,
-    [lifeSections]
-  );
-  const [activeIndices, setActiveIndices] = useState<Record<number, { left: number; right: number }>>(initialIndexMap);
+  // Determine slot count per section (based on explicit `slot` fields if present)
+  const slotCountForSection = (section: typeof lifeSections[number]) => {
+    const hasSlots = Array.isArray(section.media) && section.media.some((m) => typeof (m as any).slot === 'number');
+    if (!hasSlots) return 2; // default two columns
+    const maxSlot = section.media.reduce((max, m) => {
+      const s = typeof (m as any).slot === 'number' ? (m as any).slot : 0;
+      return Math.max(max, s);
+    }, 0);
+    return Math.max(1, maxSlot + 1);
+  };
 
-  const goPrevFrame = (sectionId: number, side: 'left' | 'right', arrLength: number) => {
+  const initialIndexMap = useMemo(() => {
+    const map: Record<number, number[]> = {};
+    for (const section of lifeSections) {
+      const count = slotCountForSection(section);
+      map[section.id] = Array.from({ length: count }, () => 0);
+    }
+    return map;
+  }, [lifeSections]);
+
+  const [activeIndices, setActiveIndices] = useState<Record<number, number[]>>(initialIndexMap);
+
+  const goPrevFrame = (sectionId: number, slotIndex: number, arrLength: number) => {
     if (arrLength <= 1) return;
     setActiveIndices((prev) => {
-      const current = prev[sectionId] ? prev[sectionId][side] : 0;
-      const next = (current - 1 + arrLength) % arrLength;
-      return { ...prev, [sectionId]: { ...(prev[sectionId] || { left: 0, right: 0 }), [side]: next } };
+      const prevArr = prev[sectionId] ? [...prev[sectionId]] : [...initialIndexMap[sectionId]];
+      const current = prevArr[slotIndex] ?? 0;
+      prevArr[slotIndex] = (current - 1 + arrLength) % arrLength;
+      return { ...prev, [sectionId]: prevArr };
     });
   };
 
-  const goNextFrame = (sectionId: number, side: 'left' | 'right', arrLength: number) => {
+  const goNextFrame = (sectionId: number, slotIndex: number, arrLength: number) => {
     if (arrLength <= 1) return;
     setActiveIndices((prev) => {
-      const current = prev[sectionId] ? prev[sectionId][side] : 0;
-      const next = (current + 1) % arrLength;
-      return { ...prev, [sectionId]: { ...(prev[sectionId] || { left: 0, right: 0 }), [side]: next } };
+      const prevArr = prev[sectionId] ? [...prev[sectionId]] : [...initialIndexMap[sectionId]];
+      const current = prevArr[slotIndex] ?? 0;
+      prevArr[slotIndex] = (current + 1) % arrLength;
+      return { ...prev, [sectionId]: prevArr };
     });
   };
 
@@ -39,17 +57,19 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
       <section id="life" className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl space-y-14 md:space-y-18">
           {lifeSections.map((section) => {
-            const leftArr = section.media.filter((_, i) => i % 2 === 0);
-            const rightArr = section.media.filter((_, i) => i % 2 === 1);
-            const leftIdx = activeIndices[section.id]?.left ?? 0;
-            const rightIdx = activeIndices[section.id]?.right ?? 0;
+            const slotCount = slotCountForSection(section);
 
-            const leftMedia = leftArr[leftIdx] ?? null;
-            const rightMedia = rightArr[rightIdx] ?? null;
+            // build arrays per slot; if no explicit slot defined, distribute by index % slotCount
+            const slotArrays: Array<typeof section.media> = Array.from({ length: slotCount }, () => [] as any);
+            section.media.forEach((m, i) => {
+              const s = typeof (m as any).slot === 'number' ? (m as any).slot : (i % slotCount);
+              const idx = Math.max(0, Math.min(slotCount - 1, s));
+              slotArrays[idx].push(m);
+            });
 
             const renderFrame = (
               mediaItem: (typeof section.media)[number] | null,
-              frameKey: 'left' | 'right',
+              slotIdx: number,
               frameList: typeof section.media,
               currentIndex: number
             ) => {
@@ -76,7 +96,7 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
                       <div className="flex items-center gap-2">
                         <button
                           type="button"
-                          onClick={() => goPrevFrame(section.id, frameKey, frameList.length)}
+                          onClick={() => goPrevFrame(section.id, slotIdx, frameList.length)}
                           className="inline-flex items-center justify-center w-8 h-8 rounded-full border bg-white text-gray-700"
                           aria-label={`Previous media in ${section.title}`}
                         >
@@ -87,7 +107,7 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
                         </span>
                         <button
                           type="button"
-                          onClick={() => goNextFrame(section.id, frameKey, frameList.length)}
+                          onClick={() => goNextFrame(section.id, slotIdx, frameList.length)}
                           className="inline-flex items-center justify-center w-8 h-8 rounded-full border bg-white text-gray-700"
                           aria-label={`Next media in ${section.title}`}
                         >
@@ -100,6 +120,8 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
               );
             };
 
+            const activeForSection = activeIndices[section.id] || Array.from({ length: slotCount }, () => 0);
+
             return (
               <article key={section.id} className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
                 <div className="md:col-span-4 md:sticky md:top-28 self-start md:pr-3">
@@ -108,9 +130,12 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
                 </div>
 
                 <div className="md:col-span-8">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-                    {leftArr.length > 0 ? renderFrame(leftMedia, 'left', leftArr, leftIdx) : null}
-                    {rightArr.length > 0 ? renderFrame(rightMedia, 'right', rightArr, rightIdx) : null}
+                  <div className={`grid grid-cols-1 sm:grid-cols-${Math.min(4, slotCount)} gap-4 md:gap-5`}>
+                    {slotArrays.map((arr, si) => (
+                      <div key={si}>
+                        {renderFrame(arr[activeForSection[si]] ?? null, si, arr, activeForSection[si] ?? 0)}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </article>

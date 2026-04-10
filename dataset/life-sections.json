@@ -4,24 +4,28 @@
     "text": "I like collecting city fragments through framing, texture, and changing weather. Most photos are casual observations from everyday routes.",
     "media": [
       {
-        "url": "/Personal Info/SHANGHAI.jpg",
+        "url": "Personal Info/SHANGHAI.jpg",
         "type": "image",
-        "caption": "SHANGHAI"
+        "caption": "SHANGHAI",
+        "slot": 0
       },
       {
-        "url": "/Personal Info/SOUEL.jpg",
+        "url": "Personal Info/SOUEL.jpg",
         "type": "image",
-        "caption": "SOUEL"
+        "caption": "SOUEL",
+        "slot": 1
       },
       {
-        "url": "/Personal Info/BUSAN.jpg",
+        "url": "Personal Info/BUSAN.jpg",
         "type": "image",
-        "caption": "BUSAN"
+        "caption": "BUSAN",
+        "slot": 2
       },
       {
-        "url": "/Personal Info/LA.jpg",
+        "url": "Personal Info/LA.jpg",
         "type": "image",
-        "caption": "LA"
+        "caption": "LA",
+        "slot": 3
       }
     ]
   },
@@ -30,9 +34,16 @@
     "text": "Music is part of my design process. I often build playlists to match different phases of ideation, modeling, and writing.",
     "media": [
       {
-        "url": "/Personal Info/Music.mp4",
+        "url": "Personal Info/Music.jpg",
+        "type": "image",
+        "caption": "Playlist cover",
+        "slot": 0
+      },
+      {
+        "url": "Personal Info/Music.mp4",
         "type": "video",
-        "caption": "Playlist moments"
+        "caption": "Playlist moments",
+        "slot": 1
       }
     ]
   }
