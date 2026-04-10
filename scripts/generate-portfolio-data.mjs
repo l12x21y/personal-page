@@ -215,10 +215,12 @@ function normalizeLifeSections(value) {
               if (!url) return null;
               const type = m?.type === 'video' ? 'video' : 'image';
               const caption = typeof m?.caption === 'string' ? m.caption.trim() : '';
+              const slot = Number.isInteger(m?.slot) && Number(m.slot) >= 0 ? Number(m.slot) : undefined;
               return {
                 url,
                 type,
                 ...(caption ? { caption } : {}),
+                ...(slot !== undefined ? { slot } : {}),
               };
             })
             .filter(Boolean)

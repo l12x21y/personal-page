@@ -113,6 +113,7 @@ export interface LifeMediaItem {
   url: string;
   type: 'image' | 'video';
   caption?: string;
+  slot?: number;
 }
 
 export interface LifeSection {

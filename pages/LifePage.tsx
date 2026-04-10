@@ -10,12 +10,26 @@ interface LifePageProps {
 
 const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
   const { lifeSections } = portfolioData;
+
+  const getColumnsClass = (slotCount: number) => {
+    const count = Math.max(1, Math.min(6, slotCount));
+    const map: Record<number, string> = {
+      1: 'sm:grid-cols-1',
+      2: 'sm:grid-cols-2',
+      3: 'sm:grid-cols-3',
+      4: 'sm:grid-cols-4',
+      5: 'sm:grid-cols-5',
+      6: 'sm:grid-cols-6',
+    };
+    return map[count];
+  };
+
   // Determine slot count per section (based on explicit `slot` fields if present)
   const slotCountForSection = (section: typeof lifeSections[number]) => {
-    const hasSlots = Array.isArray(section.media) && section.media.some((m) => typeof (m as any).slot === 'number');
+    const hasSlots = Array.isArray(section.media) && section.media.some((m) => typeof m.slot === 'number');
     if (!hasSlots) return 2; // default two columns
     const maxSlot = section.media.reduce((max, m) => {
-      const s = typeof (m as any).slot === 'number' ? (m as any).slot : 0;
+      const s = typeof m.slot === 'number' ? m.slot : 0;
       return Math.max(max, s);
     }, 0);
     return Math.max(1, maxSlot + 1);
@@ -60,9 +74,9 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
             const slotCount = slotCountForSection(section);
 
             // build arrays per slot; if no explicit slot defined, distribute by index % slotCount
-            const slotArrays: Array<typeof section.media> = Array.from({ length: slotCount }, () => [] as any);
+            const slotArrays: Array<typeof section.media> = Array.from({ length: slotCount }, () => []);
             section.media.forEach((m, i) => {
-              const s = typeof (m as any).slot === 'number' ? (m as any).slot : (i % slotCount);
+              const s = typeof m.slot === 'number' ? m.slot : (i % slotCount);
               const idx = Math.max(0, Math.min(slotCount - 1, s));
               slotArrays[idx].push(m);
             });
@@ -130,20 +144,13 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
                 </div>
 
                 <div className="md:col-span-8">
-                  {(() => {
-                    // Map slotCount to fixed Tailwind classes so Tailwind can generate them
-                    const capped = Math.min(4, slotCount);
-                    const gridColsClass = capped === 1 ? 'sm:grid-cols-1' : capped === 2 ? 'sm:grid-cols-2' : capped === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-4';
-                    return (
-                      <div className={`grid grid-cols-1 ${gridColsClass} gap-4 md:gap-5`}>
-                        {slotArrays.map((arr, si) => (
-                          <div key={si}>
-                            {renderFrame(arr[activeForSection[si]] ?? null, si, arr, activeForSection[si] ?? 0)}
-                          </div>
-                        ))}
+                  <div className={`grid grid-cols-1 ${getColumnsClass(slotCount)} gap-4 md:gap-5`}>
+                    {slotArrays.map((arr, si) => (
+                      <div key={si}>
+                        {renderFrame(arr[activeForSection[si]] ?? null, si, arr, activeForSection[si] ?? 0)}
                       </div>
-                    );
-                  })()}
+                    ))}
+                  </div>
                 </div>
               </article>
             );

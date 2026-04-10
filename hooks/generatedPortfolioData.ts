@@ -121,7 +121,7 @@ export const generatedPortfolioData: PortfolioData = {
       "id": 1,
       "title": "My Experience",
       "text": "I am an undergraduate student in Urban and Rural Planning at Tongji University, enrolled in an interdisciplinary program in architectural innovation. My work combines spatial design with an increasing engagement in computational thinking and iterative exploration.",
-      "imageUrl": "Personal%20Info/%E4%B8%AA%E4%BA%BA%E7%85%A7%E7%89%87.jpg"
+      "imageUrl": "Personal%20Info/Experience.jpg"
     },
     {
       "id": 2,
@@ -133,7 +133,7 @@ export const generatedPortfolioData: PortfolioData = {
       "id": 3,
       "title": "My Hobbies",
       "text": "I often use music and photography as ways of observing patterns beyond structured analysis. They help me notice rhythm, atmosphere, and subtle spatial changes in everyday environments.",
-      "imageUrl": "Personal%20Info/%E4%B8%AA%E4%BA%BA%E7%85%A7%E7%89%87.jpg"
+      "imageUrl": "Personal%20Info/Music.jpg"
     },
     {
       "id": 4,
@@ -151,22 +151,26 @@ export const generatedPortfolioData: PortfolioData = {
         {
           "url": "Personal%20Info/SHANGHAI.jpg",
           "type": "image",
-          "caption": "SHANGHAI"
+          "caption": "SHANGHAI",
+          "slot": 0
         },
         {
           "url": "Personal%20Info/SOUEL.jpg",
           "type": "image",
-          "caption": "SOUEL"
+          "caption": "SOUEL",
+          "slot": 1
         },
         {
           "url": "Personal%20Info/BUSAN.jpg",
           "type": "image",
-          "caption": "BUSAN"
+          "caption": "BUSAN",
+          "slot": 2
         },
         {
           "url": "Personal%20Info/LA.jpg",
           "type": "image",
-          "caption": "LA"
+          "caption": "LA",
+          "slot": 3
         }
       ]
     },
@@ -178,7 +182,21 @@ export const generatedPortfolioData: PortfolioData = {
         {
           "url": "Personal%20Info/Music.mp4",
           "type": "video",
-          "caption": "Playlist moments"
+          "caption": "Playlist moments",
+          "slot": 0
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Travel Lover",
+      "text": "I like traveling to different places and experiencing different cultures.",
+      "media": [
+        {
+          "url": "Personal%20Info/LA.jpg",
+          "type": "image",
+          "caption": "Travel moments",
+          "slot": 0
         }
       ]
     }
