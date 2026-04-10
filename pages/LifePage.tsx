@@ -12,16 +12,7 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
   const { lifeSections } = portfolioData;
 
   const getColumnsClass = (slotCount: number) => {
-    const count = Math.max(1, Math.min(6, slotCount));
-    const map: Record<number, string> = {
-      1: 'sm:grid-cols-1',
-      2: 'sm:grid-cols-2',
-      3: 'sm:grid-cols-3',
-      4: 'sm:grid-cols-4',
-      5: 'sm:grid-cols-5',
-      6: 'sm:grid-cols-6',
-    };
-    return map[count];
+    return slotCount <= 1 ? 'sm:grid-cols-1' : 'sm:grid-cols-2';
   };
 
   // Determine slot count per section (based on explicit `slot` fields if present)
