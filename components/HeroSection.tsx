@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import EditableInput from './common/EditableInput.tsx';
 import CameraIcon from './icons/CameraIcon.tsx';
 import UserIcon from './icons/UserIcon.tsx';
+import { getAssetUrl } from '../utils/assetUrl.ts';
 
 interface HeroSectionProps {
   name: string;
@@ -125,12 +126,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ name, aboutText = '', profile
     }
   };
 
-  // Resolve hero image path once (ensure leading '/' for public assets) and URL-encode it
+  // Resolve hero image path with proper base URL handling
   const resolvedHeroImagePath = heroImageUrl
-    ? (() => {
-        const isAbsolute = heroImageUrl.startsWith('data:') || heroImageUrl.startsWith('http') || heroImageUrl.startsWith('/');
-        return isAbsolute ? heroImageUrl : `/${heroImageUrl}`;
-      })()
+    ? getAssetUrl(heroImageUrl)
     : '';
 
   const backgroundStyle = resolvedHeroImagePath

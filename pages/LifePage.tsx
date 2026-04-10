@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { PortfolioData } from '../types.ts';
 import ChevronLeftIcon from '../components/icons/ChevronLeftIcon.tsx';
 import ChevronRightIcon from '../components/icons/ChevronRightIcon.tsx';
+import { getAssetUrl } from '../utils/assetUrl.ts';
 
 interface LifePageProps {
   portfolioData: PortfolioData;
@@ -64,9 +65,9 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
                 <figure className="relative p-3 shadow-lg transition-transform duration-400 bg-[var(--primary)]/6 border border-[var(--primary)]/20 rounded-lg">
                   <div className="aspect-[4/3] overflow-hidden bg-white">
                     {mediaItem.type === 'video' ? (
-                      <video src={mediaItem.url} controls className="w-full h-full object-cover" preload="metadata" />
+                      <video src={getAssetUrl(mediaItem.url)} controls className="w-full h-full object-cover" preload="metadata" />
                     ) : (
-                      <img src={mediaItem.url} alt={mediaItem.caption || section.title} className="w-full h-full object-cover" />
+                      <img src={getAssetUrl(mediaItem.url)} alt={mediaItem.caption || section.title} className="w-full h-full object-cover" />
                     )}
                   </div>
                   <div className="mt-3 flex items-center justify-between gap-3">

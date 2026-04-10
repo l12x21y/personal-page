@@ -3,6 +3,7 @@ import { Project, ProjectImage } from '../../types.ts';
 import CloseIcon from '../icons/CloseIcon.tsx';
 import ChevronLeftIcon from '../icons/ChevronLeftIcon.tsx';
 import ChevronRightIcon from '../icons/ChevronRightIcon.tsx';
+import { getAssetUrl } from '../../utils/assetUrl.ts';
 import TrashIcon from '../icons/TrashIcon.tsx';
 import PlusIcon from '../icons/PlusIcon.tsx';
 import CameraIcon from '../icons/CameraIcon.tsx';
@@ -200,7 +201,7 @@ const Lightbox: React.FC<LightboxProps> = ({
             {currentImage && (
               <img
                 key={currentImage.url}
-                src={currentImage.url}
+                src={getAssetUrl(currentImage.url)}
                 alt={currentImage.name}
                 className={`max-w-full ${mediaMaxHeightClass} object-contain animate-fade-in-up`}
               />
@@ -312,6 +313,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                     onDragOver={(e) => e.preventDefault()}
                 >
                     <img src={img.url} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover pointer-events-none"/>
+                                        <img src={getAssetUrl(img.url)} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover pointer-events-none"/>
                     {index === 0 && <div className="absolute top-0 left-0 px-1.5 py-0.5 text-xs bg-gray-200 text-black rounded-tl-md rounded-br-md font-semibold">Cover</div>}
                 </button>
             ))}

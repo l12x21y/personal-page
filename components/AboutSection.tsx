@@ -9,6 +9,7 @@ import CameraIcon from './icons/CameraIcon.tsx';
 import UserIcon from './icons/UserIcon.tsx';
 import PlusIcon from './icons/PlusIcon.tsx';
 import TrashIcon from './icons/TrashIcon.tsx';
+import { getAssetUrl } from '../utils/assetUrl.ts';
 
 interface AboutSectionProps {
   portfolioData: PortfolioData;
@@ -97,7 +98,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         <div className="md:col-span-1 flex justify-center items-start">
           <div className="relative group w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-gray-200 shadow-lg">
             {about.photoUrl ? (
-              <img src={about.photoUrl} alt="Profile" className="w-full h-full object-cover" />
+              <img src={getAssetUrl(about.photoUrl)} alt="Profile" className="w-full h-full object-cover" />
             ) : (
               <div className="w-full h-full bg-gray-200 flex items-center justify-center">
                 <UserIcon className="w-24 h-24 text-gray-400" />

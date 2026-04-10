@@ -3,6 +3,7 @@ import { PortfolioData } from '../../types.ts';
 import CloseIcon from '../icons/CloseIcon.tsx';
 import DownloadIcon from '../icons/DownloadIcon.tsx';
 import JSZip from 'jszip';
+import { getAssetUrl } from '../../utils/assetUrl.ts';
 
 interface ExportModalProps {
   isOpen: boolean;
@@ -181,7 +182,7 @@ const generateMainHtml = (data: PortfolioData): string => {
 
   const heroSection = `
     <section id="home" class="relative flex items-center min-h-screen -mt-20 pt-20 overflow-hidden">
-      <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('${data.heroImageUrl}')" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('${getAssetUrl(data.heroImageUrl)}')" aria-hidden="true"></div>
       <div class="absolute inset-0 bg-black/60 z-10" aria-hidden="true"></div>
       <div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="max-w-3xl text-left">
@@ -205,6 +206,7 @@ const generateMainHtml = (data: PortfolioData): string => {
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div class="md:col-span-1 flex justify-center items-start">
               <img src="${data.about.photoUrl}" alt="Profile Photo" class="w-64 h-64 rounded-full object-cover border-4 border-gray-200 shadow-lg"/>
+                        <img src="${getAssetUrl(data.about.photoUrl)}" alt="Profile Photo" class="w-64 h-64 rounded-full object-cover border-4 border-gray-200 shadow-lg"/>
           </div>
           <div class="md:col-span-2 flex flex-col justify-center space-y-6">
               <div class="p-6 bg-white rounded-lg border border-gray-200">
@@ -440,11 +442,13 @@ const generateMainHtml = (data: PortfolioData): string => {
 
           const currentImage = allImages[currentImageIndex];
           background.style.backgroundImage = \`url(\${currentImage?.url || ''})\`;
+                    background.style.backgroundImage = \`url(\${getAssetUrl(currentImage?.url || '')})\`;
           updateProjectDetails(project);
 
           let mediaHtml = '';
           if (currentImage) {
             mediaHtml = \`<img src="\${currentImage.url}" alt="\${sanitizeHTML(project.title)}" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">\`;
+                      mediaHtml = \`<img src="\${getAssetUrl(currentImage.url)}" alt="\${sanitizeHTML(project.title)}" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">\`;
           } else if (project.fileType === 'pdf') {
             mediaHtml = \`
               <div class="w-full h-full flex flex-col items-center justify-center bg-gray-900/50 rounded-lg p-8 text-center">

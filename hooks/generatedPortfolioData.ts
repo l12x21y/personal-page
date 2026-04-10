@@ -149,14 +149,24 @@ export const generatedPortfolioData: PortfolioData = {
       "text": "I like collecting city fragments through framing, texture, and changing weather. Most photos are casual observations from everyday routes.",
       "media": [
         {
-          "url": "Personal%20Info/Cover.JPG",
+          "url": "Personal%20Info/SHANGHAI.jpg",
           "type": "image",
-          "caption": "Urban light and atmosphere"
+          "caption": "SHANGHAI"
         },
         {
-          "url": "Personal%20Info/%E4%B8%AA%E4%BA%BA%E7%85%A7%E7%89%87.jpg",
+          "url": "Personal%20Info/SOUEL.jpg",
           "type": "image",
-          "caption": "Portrait and mood"
+          "caption": "SOUEL"
+        },
+        {
+          "url": "Personal%20Info/BUSAN.jpg",
+          "type": "image",
+          "caption": "BUSAN"
+        },
+        {
+          "url": "Personal%20Info/LA.jpg",
+          "type": "image",
+          "caption": "LA"
         }
       ]
     },
@@ -166,8 +176,8 @@ export const generatedPortfolioData: PortfolioData = {
       "text": "Music is part of my design process. I often build playlists to match different phases of ideation, modeling, and writing.",
       "media": [
         {
-          "url": "Personal%20Info/Cover.JPG",
-          "type": "image",
+          "url": "Personal%20Info/Music.mp4",
+          "type": "video",
           "caption": "Playlist moments"
         }
       ]

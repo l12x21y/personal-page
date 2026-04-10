@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { usePortfolioData } from '../hooks/usePortfolioData.ts';
+import { getAssetUrl } from '../utils/assetUrl.ts';
 import ChevronLeftIcon from '../components/icons/ChevronLeftIcon.tsx';
 import type { Project, ProjectImage, ProjectMedia, ProjectNavSection } from '../types.ts';
 import type { PortfolioData } from '../types.ts';
@@ -297,7 +298,7 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ portfolioData: pr
                   <div
                     className="w-full h-[72vh] bg-center bg-cover"
                     style={{
-                      backgroundImage: `url(${coverImage.url})`,
+                      backgroundImage: `url(${getAssetUrl(coverImage.url)})`,
                       opacity: 0.98,
                     }}
                   />
@@ -421,7 +422,7 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ portfolioData: pr
                                   <div key={(media && media.url) || `${runKey}-${mi}`} className="space-y-3 text-left">
                                     {media.type === 'video' ? (
                                       <video
-                                        src={media.url}
+                                        src={getAssetUrl(media.url)}
                                         className="w-full max-h-[78vh] object-contain cursor-pointer"
                                         controls
                                         playsInline
@@ -430,7 +431,7 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ portfolioData: pr
                                       />
                                     ) : (
                                       <img
-                                        src={media.url}
+                                        src={getAssetUrl(media.url)}
                                         alt={media.name}
                                         className="w-full max-h-[78vh] object-contain cursor-pointer"
                                         onClick={() => setZoomedImage(media)}
@@ -476,14 +477,14 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ portfolioData: pr
           <div className="w-[90vw] h-[90vh] max-w-[90vw] max-h-[90vh] flex items-center justify-center pointer-events-none">
             {zoomedImage.type === 'video' ? (
               <video
-                src={zoomedImage.url}
+                src={getAssetUrl(zoomedImage.url)}
                 className="max-w-full max-h-full object-contain shadow-[0_20px_80px_rgba(0,0,0,0.45)] pointer-events-auto"
                 controls
                 playsInline
               />
             ) : (
               <img
-                src={zoomedImage.url}
+                src={getAssetUrl(zoomedImage.url)}
                 alt={zoomedImage.name}
                 className="max-w-full max-h-full object-contain shadow-[0_20px_80px_rgba(0,0,0,0.45)] pointer-events-auto"
               />

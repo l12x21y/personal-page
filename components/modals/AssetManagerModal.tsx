@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Asset } from '../../types.ts';
 import CloseIcon from '../icons/CloseIcon.tsx';
+import { getAssetUrl } from '../../utils/assetUrl.ts';
 import UploadIcon from '../icons/UploadIcon.tsx';
 import PdfIcon from '../icons/PdfIcon.tsx';
 import TrashIcon from '../icons/TrashIcon.tsx';
@@ -79,6 +80,7 @@ const AssetManagerModal: React.FC<AssetManagerModalProps> = ({
               <div key={asset.id} className="group relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
                 {asset.type === 'image' ? (
                   <img src={asset.url} alt={asset.name} className="w-full h-full object-cover" />
+                                  <img src={getAssetUrl(asset.url)} alt={asset.name} className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center p-2">
                     <PdfIcon className="w-1/2 h-1/2 text-gray-400" />

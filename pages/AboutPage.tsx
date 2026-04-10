@@ -1,6 +1,7 @@
 import React from 'react';
 import UserIcon from '../components/icons/UserIcon.tsx';
 import { PortfolioData } from '../types.ts';
+import { getAssetUrl } from '../utils/assetUrl.ts';
 
 interface AboutPageProps {
 	portfolioData: PortfolioData;
@@ -26,7 +27,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ portfolioData }) => {
 			<div className="relative rounded-[18px] bg-[#fbfeff] shadow-[0_18px_40px_rgba(130,146,168,0.12)] p-3 sm:p-4 border border-[#d5e7f3]">
 				<div className="aspect-[4/3] overflow-hidden rounded-[4px] bg-[#f7fbff]">
 					{imageUrl ? (
-						<img src={imageUrl} alt={title} className="w-full h-full object-cover" />
+						<img src={getAssetUrl(imageUrl)} alt={title} className="w-full h-full object-cover" />
 					) : (
 						<div className="w-full h-full bg-gray-200 flex items-center justify-center">
 							<UserIcon className="w-20 h-20 text-gray-400" />

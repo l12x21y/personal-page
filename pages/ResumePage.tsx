@@ -6,6 +6,7 @@ import SkillsSection from '../components/SkillsSection.tsx';
 import UserIcon from '../components/icons/UserIcon.tsx';
 import PdfIcon from '../components/icons/PdfIcon.tsx';
 import { PortfolioData } from '../types.ts';
+import { getAssetUrl } from '../utils/assetUrl.ts';
 import certifications from '../dataset/certifications.json';
 import education from '../dataset/education.json';
 
@@ -27,7 +28,7 @@ const ResumePage: React.FC<ResumePageProps> = ({ portfolioData, isViewMode }) =>
               <div className="md:col-span-1 flex justify-center md:justify-start">
                 <div className="w-36 h-36 rounded-xl overflow-hidden">
                   {about.photoUrl ? (
-                    <img src={about.photoUrl} alt="Profile" className="w-full h-full object-cover" />
+                    <img src={getAssetUrl(about.photoUrl)} alt="Profile" className="w-full h-full object-cover" />
                   ) : (
                     <div className="w-full h-full bg-transparent flex items-center justify-center">
                       <UserIcon className="w-16 h-16 text-gray-400" />
