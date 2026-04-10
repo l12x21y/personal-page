@@ -12,21 +12,33 @@
     "cover": "Cover.jpg",
     "navSections": [
       {
-        "title": "概念与场地",
-        "text": "项目背景、区位与设计出发点。",
+        "title": "Background",
         "layout": "grid-3",
-        "mediaNames": ["Cover.jpg", "Location.jpg", "Generate.png"]
+        "content": [
+          { "type": "text", "text": "项目背景、区位与设计出发点。" },
+          { "type": "image", "mediaName": "Cover.jpg" },
+          { "type": "image", "mediaName": "Location.jpg" },
+          { "type": "image", "mediaName": "Generate.png" }
+        ]
       },
       {
-        "title": "技术图",
-        "text": "技术图类别下可放多张图并同排展示。",
+        "title": "Technical",
         "layout": "grid-4",
-        "mediaNames": ["GeneralPlan.jpg", "Plan.jpg", "Facade.jpg", "Section.jpg"]
+        "content": [
+          { "type": "text", "text": "技术图类别下展示平面/立面/剖面等资料，便于理解构造与功能分区。" },
+          { "type": "gallery", "layout": "grid-4", "mediaNames": ["GeneralPlan.jpg", "Plan.jpg", "Facade.jpg", "Section.jpg"] }
+        ]
       },
       {
-        "title": "空间体验",
+        "title": "Experience",
         "layout": "grid-3",
-        "mediaNames": ["20入口.jpg", "21门厅.jpg", "24景观面.jpg", "25连续展厅.jpg"]
+        "content": [
+          { "type": "text", "text": "描述空间序列、步行路径与关键体验节点。" },
+          { "type": "image", "mediaName": "20入口.jpg" },
+          { "type": "image", "mediaName": "21门厅.jpg" },
+          { "type": "image", "mediaName": "24景观面.jpg" },
+          { "type": "image", "mediaName": "25连续展厅.jpg" }
+        ]
       }
     ],
     "imageDescriptions": {
@@ -37,6 +49,14 @@
       "25连续展厅.jpg": "连续展厅剖面空间示意。"
     }
   },
+
+
+
+
+
+
+
+
   {
     "folder": "Flexible Climate House",
     "title": "Flexible Climate House",
@@ -44,7 +64,7 @@
     "skills": ["Environmental Analysis", "Systems Thinking"],
     "tags": ["Teamwork", "Climate", "Prototype","Architecture"],
     "time": "2024.09-2025.01",
-    "workType": "Teamwork",
+    "workType": ["1", "2"],
     "role": "Architecture",
     "description": "面向湿热与风环境的可变住宅原型研究。",
     "cover": "（已压缩）A4总_20.png",
@@ -53,16 +73,143 @@
       "（已压缩）A4总_63.png": "项目综合展示图。"
     }
   },
+
+
+
+
+
   {
-    "folder": "12",
-    "title": "Project 12",
-    "tools": [],
-    "skills": [],
-    "tags": ["12"],
+    "folder": "Sea Within",
+    "title": "Sea Within",
+    "tools": ["Rhino", "D5","python","GAN","LLM"],
+    "skills": ["Spatial Analysis", "Generative Design","Model Training"],
+    "tags": ["Architecture", "Generative Design", "LLM","Individual"],
     "time": "",
-    "workType": "",
-    "role": "",
-    "description": "Project 12",
+    "workType": "Individual",
+    "role": ["Architecture","Engineering"],
+    "description": "This project uses the binary language of black and white to explore the fluid ambiguity of memory. ",
+    "navSections": [
+      {
+        "title": "Movitation",
+        "text": "当城市记忆不再以清晰、稳定的形态存在，建筑是否仍能成为承载记忆的媒介？在快速更新的城市语境中，那些模糊、断裂、难以言说的感知经验，是否只能被忽略，或被简化为符号化的再现？"
+      },
+      {
+        "title": "Inspiration",
+        "text": "复兴岛并非一个被清晰书写进城市叙事中的场所。在多次实地踏勘中发现，复兴岛最显著的特征并不在于具体建筑，而在于其界面状态。陆地与江水之间并不存在明确的转换空间，防汛墙既是安全设施，也是感知的阻隔；水面与天际在视觉上不断延伸，却在身体层面始终不可抵达。岛上的行走经验并不连贯，空间在开放与封闭之间频繁切换，形成一种节奏断裂却又真实存在的感知状态。更重要的是，复兴岛所承载的并非完整、清晰的城市记忆，而是一种模糊、碎片化的记忆残留。这种状态并非简单的“衰败”，而是一种尚未被重新命名的中间状态 —— 既未被彻底遗忘，也未被重新占有。在这种游离、悬置的空间状态下，复兴岛更适合作为感知发生的场所，其天然存在的二分关系与未完成状态，成为设计的起点。因此，设计并未试图通过建筑为场地“补全意义”，而是将这些未被解决的空间关系本身视为建筑概念的核心来源：陆与水、开放与阻隔、可达与不可达、清晰与模糊，这些并存却未被调和的状态。建筑不再被理解为对场地的覆盖或修复，而是一种介入方式：通过对界面的重新组织，使抽象的二分关系被转译为可被行走、可被感知的空间经验。",
+        "layout": "grid-3",
+        "mediaNames": ["history.jpg"]
+      },
+     {
+        "title": "Generative Design",
+        "text": "基于GAN的生成设计探索。",
+        "layout": "grid-1",
+        "mediaNames": ["frame_01.png","frame_02.png"]
+      },
+      {
+        "title": "Experience",
+        "layout": "grid-3",
+        "mediaNames": ["20入口.jpg", "21门厅.jpg", "24景观面.jpg", "25连续展厅.jpg"]
+      },
+      {
+      "title": "Experience",
+      "layout": "grid-2",
+      "content": [
+       { "type": "text", "html": "开头介绍，概述设计目标和情境。" },
+       { "type": "image", "mediaName": "14-景观步道.png" },
+       { "type": "image", "mediaName": "15-咖啡.png" },
+       { "type": "text", "html": "中段说明，解释空间序列与关键节点。" },
+       { "type": "image", "mediaName": "24景观面.jpg" },
+       { "type": "text", "html": "结尾总结或下一步说明。" }
+      ]
+      },
+      {
+        "title": "Reflection",
+        "text": "通过整个学期的项目实践，我认识到数字化工具不再仅是绘图或展示的辅助手段，而能够成为参与设计决策、塑造空间逻辑、调控体验强度的“共创主体”。在本项目中，抽象的感知目标被转化为具体的参数化操作，并通过AI与算法闭环验证与优化空间效果。这一过程表明，设计者与数智工具的关系应超越单向操作，形成“合作 - 反馈 - 优化”的循环。同时，这也提示建筑教育中，数智工具应被理解为设计思维的延伸，而非单纯技能训练，使技术真正融入建筑生成的核心逻辑。"
+      }
+
+    ],
+    "imageDescriptions": {}
+  },
+
+
+
+
+
+
+
+    {
+    "folder": "Living Jade",
+    "title": "Living Jade",
+    "tools": ["APP", "python","LLM","Algorithm"],
+    "skills": ["Coding", "Systems Thinking"],
+    "tags": ["Individual", "Prototype","HCI","LLM"],
+    "time": "2025.09-2026.01",
+    "workType": ["Individual"],
+    "role": "APP Designer",
+    "description": "An interactive system that models personality as a dynamic and evolving representation, using jade as a symbolic interface.",
+    "cover": "（已压缩）A4总_20.png",
+    "navSections": [
+      {
+        "title": "Inspiration",
+        "layout": "grid-1",
+        "content": [
+       { "type": "text", "html": "Personality frameworks like MBTI have become a shared social language for people to introduce themselves and connect with others, especially among young users. They are widely used to initiate conversations, express identity, and navigate social interactions. Conversations often begin with labels like “I’m an ENFP” or “I’m an INFJ.”" },
+       { "type": "image", "mediaName": "SocialScene.png" },
+       { "type": "text", "html": "However, these interactions often remain shallow. People struggle to move beyond labels and express who they really are." },
+       { "type": "text", "html": "This project — Living Jade — explores how personality representation can move beyond static categories to support more meaningful social interaction." }
+      ]
+      },
+      {
+        "title": "Problem",
+        "layout": "grid-2",
+        "content": [
+       { "type": "text", "html": "While widely adopted, personality systems rely on fixed categories often fail to reflect how people actually experience and express themselves.Through research and user studies, several key issues were identified:" },
+       {"type": "text", "html": "· Personality is reduced to static labels" },
+       {"type": "text", "html": "· Test results lack stability over time" },
+       {"type": "text", "html": "· Systems fail to support meaningful, ongoing interaction" },
+       { "type": "image", "mediaName": "Persona1.png" },
+       { "type": "image", "mediaName": "Persona2.png" },
+       { "type": "text", "html": "<strong style='color:#9dd3ff; font-size:22px; font-weight:700;'>How might we represent personality as a dynamic and evolving system that supports deeper self-expression and more meaningful social interaction?</strong>" }
+      ]
+      },
+      {
+        "title": "Design Development",
+        "layout": "grid-1",
+        "content": [
+       { "type": "text", "html": "We began by rethinking how personality could be represented beyond static categories. Early explorations focused on shifting from discrete personality types to continuous and multi-dimensional representations.We experimented with different ways of structuring personality traits, comparing categorical labels with vector-based models that allow gradual variation and evolution over time." },
+       { "type": "image", "mediaName": "Development.png" },
+       { "type": "text", "html": "To make abstract personality data more interpretable and expressive, we explored visual metaphors for representation. Jade was chosen as a cultural and symbolic medium due to its associations with balance, variation, and layered meaning. We experimented with how different personality traits could be translated into visual properties such as color, texture, and form." },
+       { "type": "image", "mediaName": "Development2.png" },
+       { "type": "text", "html": "We explored different interaction models to move beyond one-time personality testing toward continuous engagement. Early concepts included static test-based outputs versus interactive systems that allow users to explore and refine their personality over time. Through iteration, we focused on integrating AI-driven dialogue to support ongoing interpretation and self-reflection." },
+       { "type": "image", "mediaName": "Development3.png" },
+       { "type": "text", "html": "As the system evolved, we integrated representation, interaction, and interpretation into a unified framework. The final design combines dynamic personality vectors, AI-based interpretation, and jade visualization to create a continuous and interpretable experience. We iteratively refined the system to balance expressiveness, interpretability, and usability." },
+       { "type": "image", "mediaName": "Development4.png" },
+       { "type": "text", "html": "" },
+       { "type": "image", "mediaName": "14-景观步道.png" }
+      ]
+      },
+      {
+        "title": "System & Interaction",
+        "layout": "grid-1",
+        "content": [
+       { "type": "text", "html": "The system enables users to explore personality through continuous interaction:" },
+       { "type": "text", "html": "· Users input preferences through questions and interactions" },
+       { "type": "text", "html": "· A dynamic personality vector is generated and updated over time" },
+       { "type": "text", "html": "· AI provides contextual interpretation and explanation" },
+       { "type": "text", "html": "· Personality is expressed through evolving jade representations" },
+       { "type": "image", "mediaName": "14-景观步道.png" }
+      ]
+      },
+      {
+        "title": "Challenges & Reflection",
+        "layout": "grid-1",
+        "content": [
+       { "type": "text", "html": "One of the main challenges was balancing abstraction and interpretability. While dynamic representations allow flexibility, users still need clear explanations to understand their personality." },
+       { "type": "text", "html": "Another challenge was translating a computational model into an intuitive and meaningful interface." },
+       { "type": "text", "html": "This project highlights the importance of designing AI systems that are not only technically robust, but also interpretable and human-centered." }
+      ]
+      }
+    ],
     "imageDescriptions": {}
   }
 ]

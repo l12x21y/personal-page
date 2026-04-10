@@ -1,22 +1,22 @@
 [
   {
     "title": "My Experience",
-    "text": "Through studio projects, internships, and interdisciplinary research, I have developed a practical workflow that balances spatial thinking, visual communication, and data-supported decision-making.",
+    "text": "I am an undergraduate student in Urban and Rural Planning at Tongji University, enrolled in an interdisciplinary program in architectural innovation. My work combines spatial design with an increasing engagement in computational thinking and iterative exploration.",
     "imageUrl": "/Personal Info/个人照片.jpg"
   },
   {
     "title": "My Background",
-    "text": "I study Urban Planning at Tongji University, with additional training in architecture-related innovation programs. This dual path helps me connect urban-scale strategy with human-scale design details.",
+    "text": "My academic training focuses on cities as spatial systems shaped by behavior, infrastructure, and data. Alongside this, I have been self-learning coding, which has gradually shifted my interest toward system-based and human-centered design approaches.",
     "imageUrl": "/Personal Info/Cover.jpg"
   },
   {
     "title": "My Hobbies",
-    "text": "Outside academic work, I enjoy documenting streets and light conditions through photography, and using music as a way to reset rhythm and keep creative focus.",
+    "text": "I often use music and photography as ways of observing patterns beyond structured analysis. They help me notice rhythm, atmosphere, and subtle spatial changes in everyday environments.",
     "imageUrl": "/Personal Info/个人照片.jpg"
   },
   {
     "title": "My Aspirations",
-    "text": "I hope to build meaningful urban and architectural experiences that are both analytically grounded and emotionally resonant, especially in contexts of renewal and public life.",
+    "text": "I am currently interested in Human-Computer Interaction, especially at the intersection of spatial experience, systems, and human perception. In the future, I hope to design systems that better connect physical environments and human experience.",
     "imageUrl": "/Personal Info/Cover.jpg"
   }
 ]

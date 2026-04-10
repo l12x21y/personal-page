@@ -182,7 +182,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       )}
 
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold text-gray-900 mb-2">
+        <h3 className="text-xl font-bold text-gray-900 mb-2 font-mono tracking-widest">
            <EditableInput 
                 value={project.title}
                 onChange={(val) => onUpdateProject(project.id, 'title', val)}

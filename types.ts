@@ -38,8 +38,8 @@ export interface Project {
   title: string;
   description: string;
   time?: string;
-  workType?: string; // e.g. 个人作业 / 小组作业
-  role?: string;
+  workType?: string | string[]; // e.g. 个人作业 / 小组作业
+  role?: string | string[];
   images: ProjectImage[]; // First image is cover
   mediaAssets?: ProjectMedia[];
   tools?: string[];
@@ -100,6 +100,15 @@ export interface AboutSection {
   imageUrl: string;
 }
 
+export interface EducationEntry {
+  id: number;
+  period: string; // e.g. "2023-present"
+  institution: string;
+  level?: string; // e.g. 本科 / M.S.
+  major?: string;
+  description?: string;
+}
+
 export interface LifeMediaItem {
   url: string;
   type: 'image' | 'video';
@@ -120,6 +129,7 @@ export interface PortfolioData {
   about: AboutData;
   aboutSections: AboutSection[];
   lifeSections: LifeSection[];
+  education: EducationEntry[];
   projects: Project[];
   skills: Skill[];
   contact: Contact;

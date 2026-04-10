@@ -20,32 +20,7 @@ interface SkillBarProps {
 }
 
 const SkillBar: React.FC<SkillBarProps> = ({ name, level, delay }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
-
+  // Always render the bar width (no dependency on intersection observer)
   return (
     <div>
       <div className="flex justify-between items-end mb-1">
@@ -56,9 +31,9 @@ const SkillBar: React.FC<SkillBarProps> = ({ name, level, delay }) => {
         <div
           className="h-2 rounded-full transition-all ease-out duration-1000"
           style={{ 
-            width: isVisible ? `${level}%` : '0%',
+            width: `${level}%`,
             transitionDelay: `${delay}ms`,
-            backgroundColor: 'var(--primary)'
+            backgroundColor: 'var(--primary, #3b82f6)'
           }}
         ></div>
       </div>
@@ -92,10 +67,10 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, isViewMode, onUpd
           <div>
             {Object.entries(categories).map(([cat, items]) => (
               <div key={cat} className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">{cat}</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3 font-mono tracking-widest">{cat}</h4>
                 <div className="flex flex-wrap gap-2">
                   {items.map(item => (
-                    <span key={item} className="inline-flex items-center px-3 py-1 rounded-full bg-[var(--primary)]/12 text-[var(--primary)] text-sm">
+                    <span key={item} className="inline-flex items-center px-3 py-1 rounded-full bg-[var(--primary)]/12 text-[var(--primary)] text-sm font-mono tracking-widest">
                       {item}
                     </span>
                   ))}
@@ -105,10 +80,12 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, isViewMode, onUpd
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-3">Soft Skills</h4>
-            <div className="space-y-4">
-              {softSkills.map((name, idx) => (
-                <SkillBar key={name} name={name} level={levelMap[name] ?? defaultSoftLevel} delay={idx * 120} />
+            <h4 className="text-lg font-semibold text-gray-900 mb-3 font-mono tracking-widest">Soft Skills</h4>
+            <div className="flex flex-wrap gap-2">
+              {softSkills.map((name) => (
+                <span key={name} className="inline-flex items-center px-3 py-1 rounded-full bg-[var(--primary)]/12 text-[var(--primary)] text-sm font-mono tracking-widest">
+                  {name}
+                </span>
               ))}
             </div>
           </div>

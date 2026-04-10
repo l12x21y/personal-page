@@ -12,11 +12,11 @@ interface AwardCardProps {
 
 const AwardCard: React.FC<AwardCardProps> = ({ award, onUpdate, onDelete, isViewMode }) => {
   return (
-    <div className="relative group p-4 bg-white rounded-lg border border-gray-200 transition-colors hover:border-gray-300 flex flex-col">
+    <div className="relative group mb-4">
       {!isViewMode && (
         <button 
           onClick={onDelete} 
-          className="absolute top-2 right-2 p-1.5 bg-gray-100 text-gray-800 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gray-200"
+          className="absolute top-0 right-0 p-1.5 text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity"
           aria-label="Delete award entry"
         >
           <TrashIcon className="w-4 h-4" />

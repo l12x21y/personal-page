@@ -25,7 +25,7 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
       className={`py-20 sm:py-28 transition-all duration-1000 ease-out ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
       <div className="flex items-center mb-12">
-        <h2 className="text-4xl font-bold text-black tracking-tight">{title}</h2>
+        <h2 className="text-4xl font-bold text-black font-mono tracking-widest">{title}</h2>
         <div className="flex-grow h-px bg-gray-300 ml-6"></div>
       </div>
       {children}

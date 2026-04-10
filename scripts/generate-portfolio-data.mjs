@@ -53,7 +53,7 @@ const defaultData = {
       { id: 2, label: 'School', value: 'Tongji University' },
       { id: 3, label: 'Major', value: 'Urban Planning & Experimental Class for Compound Innovative Talents' },
     ],
-    summary: 'I am currently an undergraduate student in Urban and Rural Planning at Tongji University, also enrolled in an interdisciplinary experimental program for architectural innovation. I have maintained an outstanding academic record, with a GPA of 4.92/5.00, ranking first in my major. I have achieved a 100% excellence rate in both professional and theoretical coursework, and possess a strong foundation in academic English.',
+    summary: `I’m interested in how people experience space, and how systems quietly shape those experiences. Music and photography are how I notice what is usually overlooked.`,
     workExperience: [
       {
         id: 1,
@@ -243,49 +243,51 @@ function normalizeNavSections(value) {
     .map((section) => {
       if (!section || typeof section.title !== 'string' || !section.title.trim()) return null;
 
-      const imageIndexes = Array.isArray(section.imageIndexes)
-        ? section.imageIndexes
-            .map((index) => Number(index))
-            .filter((index) => Number.isInteger(index) && index >= 0)
-        : [];
-
-      const imageNames = Array.isArray(section.imageNames)
-        ? section.imageNames.filter((name) => typeof name === 'string' && name.trim().length > 0)
-        : [];
-
       const normalized = {
         title: section.title.trim(),
       };
 
+      // preserve simple text/description
       const text = typeof section.text === 'string' ? section.text : section.description;
-      if (typeof text === 'string' && text.trim()) {
-        normalized.text = text.trim();
-      }
-      if (['single', 'grid-2', 'grid-3', 'grid-4'].includes(section.layout)) {
+      if (typeof text === 'string' && text.trim()) normalized.text = text.trim();
+
+      // accept grid-1 as a valid layout, plus existing ones
+      if (['single', 'grid-1', 'grid-2', 'grid-3', 'grid-4'].includes(section.layout)) {
         normalized.layout = section.layout;
       }
-      if (imageIndexes.length > 0) {
-        normalized.imageIndexes = imageIndexes;
-      }
-      if (imageNames.length > 0) {
-        normalized.imageNames = imageNames;
-      }
 
-      const mediaIndexes = Array.isArray(section.mediaIndexes)
-        ? section.mediaIndexes
-            .map((index) => Number(index))
-            .filter((index) => Number.isInteger(index) && index >= 0)
-        : [];
+      // If an explicit ordered content array exists, keep it as-is (supports interleaved text/images)
+      if (Array.isArray(section.content) && section.content.length > 0) {
+        normalized.content = section.content.map((c) => c);
+      } else {
+        // fallback to older fields: imageIndexes, imageNames, mediaIndexes, mediaNames
+        const imageIndexes = Array.isArray(section.imageIndexes)
+          ? section.imageIndexes.map((index) => Number(index)).filter((index) => Number.isInteger(index) && index >= 0)
+          : [];
 
-      const mediaNames = Array.isArray(section.mediaNames)
-        ? section.mediaNames.filter((name) => typeof name === 'string' && name.trim().length > 0)
-        : [];
+        const imageNames = Array.isArray(section.imageNames)
+          ? section.imageNames.filter((name) => typeof name === 'string' && name.trim().length > 0)
+          : [];
 
-      if (mediaIndexes.length > 0) {
-        normalized.mediaIndexes = mediaIndexes;
-      }
-      if (mediaNames.length > 0) {
-        normalized.mediaNames = mediaNames;
+        const mediaIndexes = Array.isArray(section.mediaIndexes)
+          ? section.mediaIndexes.map((index) => Number(index)).filter((index) => Number.isInteger(index) && index >= 0)
+          : [];
+
+        const mediaNames = Array.isArray(section.mediaNames)
+          ? section.mediaNames.filter((name) => typeof name === 'string' && name.trim().length > 0)
+          : [];
+
+        if (imageIndexes.length > 0) normalized.imageIndexes = imageIndexes;
+        if (imageNames.length > 0) normalized.imageNames = imageNames;
+        if (mediaIndexes.length > 0) normalized.mediaIndexes = mediaIndexes;
+        if (mediaNames.length > 0) normalized.mediaNames = mediaNames;
+
+        // compatibility: if only mediaNames present, convert to ordered content image blocks
+        if (!normalized.content && Array.isArray(mediaNames) && mediaNames.length > 0) {
+          normalized.content = mediaNames.map((name) => ({ type: 'image', mediaName: name }));
+        } else if (!normalized.content && Array.isArray(imageNames) && imageNames.length > 0) {
+          normalized.content = imageNames.map((name) => ({ type: 'image', mediaName: name }));
+        }
       }
 
       return normalized;
@@ -480,6 +482,8 @@ function loadProjects(projectRoot, datasetProjectMetaList) {
       time: meta.time || meta.date || '',
       workType: meta.workType || meta.assignmentType || '',
       role: meta.role || meta.projectRole || '',
+      tools: Array.isArray(meta.tools) ? meta.tools.filter((t) => typeof t === 'string' && t.trim().length > 0) : [],
+      skills: Array.isArray(meta.skills) ? meta.skills.filter((s) => typeof s === 'string' && s.trim().length > 0) : [],
       mediaAssets,
       navSections: normalizeNavSections(meta.navSections || meta.sections || meta.navigation),
       images,
@@ -494,8 +498,22 @@ function main() {
   const datasetDir = path.join(root, 'dataset');
   const profileJsonPath = path.join(root, 'Personal Info', 'profile.json');
   const profile = readJsonFile(profileJsonPath) || {};
+  // read dataset personal info (optional)
+  const datasetPersonalInfo = readJsonFile(path.join(datasetDir, 'personal-info.json')) || {};
   const datasetProjectsMeta = normalizeProjectMetaJson(readJsonFile(path.join(datasetDir, 'projects.json')));
   const aboutSections = normalizeAboutSections(readJsonFile(path.join(datasetDir, 'about-sections.json')));
+  // read dataset education entries
+  const educationJson = readJsonFile(path.join(datasetDir, 'education.json')) || [];
+  const educationEntries = Array.isArray(educationJson)
+    ? educationJson.map((item, index) => ({
+        id: item.id || index + 1,
+        period: item.period || item.date || '',
+        institution: item.institution || item.school || '',
+        level: item.level || '',
+        major: item.major || '',
+        description: item.description || '',
+      }))
+    : [];
   const lifeSections = normalizeLifeSections(readJsonFile(path.join(datasetDir, 'life-sections.json')));
 
   const personalDir = path.join(root, 'Personal Info');
@@ -560,14 +578,26 @@ function main() {
     heroImageUrl: personal.hero,
     about: {
       photoUrl: personal.photo,
-      details: Array.isArray(profile.aboutDetails) && profile.aboutDetails.length > 0
-        ? profile.aboutDetails.map((d, index) => ({ id: index + 1, label: d.label || '', value: d.value || '' }))
-        : defaultData.about.details,
+      details: (function() {
+        // prefer dataset personal-info.json, then profile.aboutDetails, then defaults
+        if (datasetPersonalInfo && (datasetPersonalInfo.birthday || datasetPersonalInfo.school || datasetPersonalInfo.major)) {
+          const rows = [];
+          if (datasetPersonalInfo.birthday) rows.push({ id: 1, label: 'Birthday', value: datasetPersonalInfo.birthday });
+          if (datasetPersonalInfo.school) rows.push({ id: rows.length + 1, label: 'School', value: datasetPersonalInfo.school });
+          if (datasetPersonalInfo.major) rows.push({ id: rows.length + 1, label: 'Major', value: datasetPersonalInfo.major });
+          return rows;
+        }
+        if (Array.isArray(profile.aboutDetails) && profile.aboutDetails.length > 0) {
+          return profile.aboutDetails.map((d, index) => ({ id: index + 1, label: d.label || '', value: d.value || '' }));
+        }
+        return defaultData.about.details;
+      })(),
       summary: profile.summary || defaultData.about.summary,
       workExperience,
       researchExperience,
       awards,
     },
+    education: educationEntries,
     aboutSections: aboutSections.map((section) => ({
       ...section,
       imageUrl: normalizePersonalInfoUrl(section.imageUrl, personalFileNames),

@@ -13,11 +13,11 @@ interface ExperienceCardProps {
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, onUpdate, onDelete, isViewMode }) => {
   return (
-    <div className="relative group p-6 bg-white rounded-lg border border-gray-200 transition-colors hover:border-gray-300">
+    <div className="relative group mb-4">
       {!isViewMode && (
         <button 
           onClick={onDelete} 
-          className="absolute top-2 right-2 p-1.5 bg-gray-100 text-gray-800 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gray-200"
+          className="absolute top-0 right-0 p-1.5 text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity"
           aria-label="Delete experience entry"
         >
           <TrashIcon className="w-4 h-4" />
@@ -43,14 +43,14 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, onUpdate, o
         value={experience.organization} 
         onChange={val => onUpdate('organization', val)} 
         ariaLabel="Organization or Company" 
-        className="font-semibold text-gray-700 mb-2 w-full"
+        className="font-semibold text-gray-700 mb-1 w-full"
         isViewMode={isViewMode} 
       />
       <EditableTextarea 
         value={experience.description} 
         onChange={val => onUpdate('description', val)} 
         ariaLabel="Experience description" 
-        className="text-gray-700 w-full"
+        className="text-gray-700 w-full mt-1"
         isViewMode={isViewMode} 
       />
     </div>

@@ -26,18 +26,33 @@ const HeroSection: React.FC<HeroSectionProps> = ({ name, aboutText = '', profile
     if (!aboutText) return;
 
     let charIndex = 0;
-    const typingTimer = window.setInterval(() => {
+    let mounted = true;
+
+    const baseDelay = 22;
+
+    const typeNext = () => {
+      if (!mounted) return;
       charIndex += 1;
       setTypedText(aboutText.slice(0, charIndex));
 
-      if (charIndex >= aboutText.length) {
-        window.clearInterval(typingTimer);
-      }
-    }, 22);
+      if (charIndex >= aboutText.length) return;
 
-    return () => {
-      window.clearInterval(typingTimer);
+      const nextChar = aboutText.charAt(charIndex - 1);
+      const upcomingChar = aboutText.charAt(charIndex);
+
+      // Add rhythm: longer pauses after commas and sentence ends
+      let delay = baseDelay;
+      if (nextChar === ',' || nextChar === ';') delay = 180;
+      if (nextChar === '.' || nextChar === '!' || nextChar === '?' ) delay = 420;
+      if (nextChar === ' ' && upcomingChar === ' ') delay = 80;
+
+      window.setTimeout(typeNext, delay);
     };
+
+    // start typing
+    window.setTimeout(typeNext, 200);
+
+    return () => { mounted = false; };
   }, [aboutText]);
 
   useEffect(() => {
@@ -45,11 +60,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ name, aboutText = '', profile
 
     const img = new Image();
     // For external URLs like unsplash, we need to handle CORS
-    if (!heroImageUrl.startsWith('data:')) {
+    const isData = resolvedHeroImagePath.startsWith('data:');
+    if (!isData) {
       img.crossOrigin = 'Anonymous';
     }
-    
-    img.src = heroImageUrl;
+
+    img.src = resolvedHeroImagePath ? encodeURI(decodeURI(resolvedHeroImagePath)) : heroImageUrl;
     img.onload = () => {
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
@@ -109,12 +125,24 @@ const HeroSection: React.FC<HeroSectionProps> = ({ name, aboutText = '', profile
     }
   };
 
+  // Resolve hero image path once (ensure leading '/' for public assets) and URL-encode it
+  const resolvedHeroImagePath = heroImageUrl
+    ? (() => {
+        const isAbsolute = heroImageUrl.startsWith('data:') || heroImageUrl.startsWith('http') || heroImageUrl.startsWith('/');
+        return isAbsolute ? heroImageUrl : `/${heroImageUrl}`;
+      })()
+    : '';
+
+  const backgroundStyle = resolvedHeroImagePath
+    ? { backgroundImage: `url("${encodeURI(decodeURI(resolvedHeroImagePath))}")` } as React.CSSProperties
+    : undefined;
+
   return (
     <section id="home" className="relative flex items-center min-h-screen -mt-20 pt-20 overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center z-0" 
-        style={{ backgroundImage: `url(${encodeURI(heroImageUrl)})` }}
+      <div
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={backgroundStyle}
         aria-hidden="true"
       ></div>
       {/* Bottom fade for smooth transition into next section */}
@@ -138,11 +166,75 @@ const HeroSection: React.FC<HeroSectionProps> = ({ name, aboutText = '', profile
             </h1>
 
             <p
-              className={`mt-6 text-lg sm:text-xl leading-relaxed max-w-2xl whitespace-pre-line animate-fade-in-up ${textColorClass}`}
-              style={{ ...textShadowStyle, animationDelay: '400ms' }}
+              className={`mt-6 text-lg sm:text-xl max-w-2xl whitespace-pre-line animate-fade-in-up ${textColorClass} font-sans`}
+              style={{ ...textShadowStyle, animationDelay: '400ms', lineHeight: 1.9 }}
               aria-label="About summary"
             >
-              {typedText}
+              {/** render typed text with highlighted keywords */}
+              {(() => {
+                const text = typedText || '';
+                const keywords = ['people', 'space', 'systems', 'experiences', 'music', 'photography', 'overlooked', 'observation'];
+
+                if (!text) return null;
+
+                // Build nodes by scanning for keyword occurrences (word-boundary, case-insensitive)
+                const nodes: React.ReactNode[] = [];
+                let lastIndex = 0;
+                const lower = text.toLowerCase();
+
+                // find earliest match repeatedly
+                while (lastIndex < text.length) {
+                  let matchIndex = -1;
+                  let matchWord = '';
+                  for (const kw of keywords) {
+                    const re = new RegExp('\\b' + kw + '\\b', 'i');
+                    const m = re.exec(text.slice(lastIndex));
+                    if (m) {
+                      const idx = m.index + lastIndex;
+                      if (matchIndex === -1 || idx < matchIndex) {
+                        matchIndex = idx;
+                        matchWord = m[0];
+                      }
+                    }
+                  }
+
+                  if (matchIndex === -1) {
+                    // no more matches
+                    nodes.push(text.slice(lastIndex));
+                    break;
+                  }
+
+                  if (matchIndex > lastIndex) {
+                    nodes.push(text.slice(lastIndex, matchIndex));
+                  }
+
+                  // push highlighted span only if full word is present in current typed text
+                  nodes.push(
+                    <span
+                      key={lastIndex + '-' + matchIndex}
+                      className="text-black"
+                      style={{
+                        // wider, lower marker band under the letters without shifting baseline
+                        backgroundImage: 'linear-gradient(transparent 0%, rgba(209,240,255,0.55) 0%, rgba(209,240,255,0.55) 100%, transparent 100%)',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: '100% 48%',
+                        backgroundPosition: '0 75%',
+                        padding: '0 0.18rem',
+                        borderRadius: 0,
+                        verticalAlign: 'baseline',
+                        display: 'inline',
+                      }}
+                    >
+                      {text.slice(matchIndex, matchIndex + matchWord.length)}
+                    </span>
+                  );
+
+                  lastIndex = matchIndex + matchWord.length;
+                }
+
+                return nodes;
+              })()}
+
               <span className="inline-block w-2 ml-1 animate-pulse">|</span>
             </p>
           </div>

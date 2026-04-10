@@ -1,0 +1,19 @@
+[
+	{
+		"id": 1,
+		"period": "2023-present",
+		"institution": "Tongji University",
+		"level": "Bachelor",
+		"major": "Urban Planning",
+		"description": "GPA:4.91/5.0, Rank:2/48"
+	},
+    {
+        "id": 2,
+        "period": "2024-2026",
+        "institution": "Tongji University",
+        "level": "Bachelor",
+        "major": "Experimental Class for Compound Innovative Talents",
+        "description": "GPA:4.91/5.0, Rank:1/19"
+    }
+
+]

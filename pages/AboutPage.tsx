@@ -14,7 +14,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ portfolioData }) => {
 			<div className="absolute -top-6 left-4 w-20 h-9 bg-[#d7ecfb]/75 rounded-sm rotate-[-14deg] shadow-sm"></div>
 			<div className="absolute -bottom-5 right-8 w-16 h-7 bg-[#dff3e8]/75 rounded-sm rotate-[10deg] shadow-sm"></div>
 			<div className="relative rounded-[14px] bg-[#9ecfe8] text-[#17324a] shadow-[0_12px_28px_rgba(101,149,176,0.14)] px-5 py-5 sm:px-7 sm:py-6 border border-[#8bb9d4]/40">
-				<h3 className="text-[1.45rem] sm:text-[2.1rem] leading-[0.98] font-extrabold tracking-tight capitalize mb-3">{title.toLowerCase()}</h3>
+				<h3 className="text-[1.45rem] sm:text-[2.1rem] leading-[0.98] font-extrabold font-mono tracking-widest capitalize mb-3">{title.toLowerCase()}</h3>
 				<p className="max-w-[26rem] text-[0.93rem] sm:text-[1rem] leading-[1.55] text-[#183246]/90 whitespace-pre-line">{text}</p>
 			</div>
 		</div>
@@ -82,6 +82,56 @@ const AboutPage: React.FC<AboutPageProps> = ({ portfolioData }) => {
 		<div className="w-full px-4 sm:px-6 lg:px-8">
 			<section id="about-page" className="py-14 sm:py-16">
 				<div className="mx-auto max-w-5xl space-y-16 md:space-y-20">
+					{/* Lead paragraph at top — large text without box, keywords highlighted */}
+					<div>
+							<p
+								className="text-3xl sm:text-4xl md:text-5xl mb-6"
+								style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300, lineHeight: 1.6 }}
+							>
+							{(() => {
+								const lead = `Through design, computation, and music, I explore how everyday spatial experience is shaped by unseen systems.`;
+								const keywords = ['design', 'computation', 'music', 'spatial experience'];
+								const nodes: React.ReactNode[] = [];
+								let cursor = 0;
+								const lower = lead.toLowerCase();
+
+								while (cursor < lead.length) {
+									let foundIndex = -1;
+									let foundKey = '';
+									for (const kw of keywords) {
+										const re = new RegExp('\\b' + kw.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&') + '\\b', 'i');
+										const match = re.exec(lead.slice(cursor));
+										if (match) {
+											const idx = match.index + cursor;
+											if (foundIndex === -1 || idx < foundIndex) {
+												foundIndex = idx;
+												foundKey = match[0];
+											}
+										}
+									}
+
+									if (foundIndex === -1) {
+										nodes.push(lead.slice(cursor));
+										break;
+									}
+
+									if (foundIndex > cursor) {
+										nodes.push(lead.slice(cursor, foundIndex));
+									}
+
+									nodes.push(
+										<span key={cursor + '-' + foundIndex} className="text-sky-400">
+											{lead.slice(foundIndex, foundIndex + foundKey.length)}
+										</span>
+									);
+
+									cursor = foundIndex + foundKey.length;
+								}
+
+								return nodes;
+							})()}
+						</p>
+					</div>
 					{aboutSections.map((section, index) => (
 						<OverlapPair
 							key={section.id}

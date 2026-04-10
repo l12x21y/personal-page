@@ -24,6 +24,15 @@ const Header: React.FC<HeaderProps> = ({ name, email, phone, github }) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isMobileMenuOpen]);
   
   const navLinks = [
     { to: '/', label: 'project' },
@@ -40,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ name, email, phone, github }) => {
     || '2353274@tongji.edu.cn';
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-md border-b border-gray-200' : 'bg-transparent'}`}>
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isMobileMenuOpen ? 'bg-transparent shadow-none border-b-0' : isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-md border-b border-gray-200' : 'bg-transparent'}`}>
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <NavLink to="/" className="text-3xl font-mono tracking-widest" style={{ color: '#000' }}>
@@ -103,31 +112,55 @@ const Header: React.FC<HeaderProps> = ({ name, email, phone, github }) => {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-5">
-            <nav className="flex flex-col gap-3 pt-2">
-              {navLinks.map((link) => (
+          <div className="md:hidden fixed inset-0 w-screen h-screen z-[120] bg-[#eaf5fd]">
+            <div className="h-full w-full px-6 pt-6 pb-10 flex flex-col">
+              <div className="flex items-center justify-between pb-8 border-b border-gray-200">
                 <NavLink
-                  key={link.to}
-                  to={link.to}
+                  to="/"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={({ isActive }) => `text-base font-medium ${isActive ? 'text-black' : 'text-black hover:text-[var(--primary)]'}`}
+                  className="text-3xl font-mono tracking-widest text-black"
                 >
-                  {link.label}
+                  {name}
                 </NavLink>
-              ))}
-            </nav>
-            <div className="mt-4 flex items-center gap-4 text-black">
-              <a href={`mailto:${primaryEmail}`} className="hover:text-[var(--primary)] transition-colors" aria-label="Email 2353274" title="Email">
-                <MailIcon className="w-5 h-5" />
-              </a>
-              <a href={`tel:${phone || ''}`} className="hover:text-[var(--primary)] transition-colors" aria-label="Phone" title="Phone">
-                <PhoneIcon className="w-5 h-5" />
-              </a>
-              {github ? (
-                <a href={github} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors" aria-label="GitHub" title="GitHub">
-                  <GithubIcon className="w-5 h-5" />
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center w-12 h-12 text-gray-700 hover:text-black"
+                  aria-label="Close menu"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+
+              <nav className="flex-1 flex flex-col justify-center gap-8 text-black">
+                {navLinks.map((link) => (
+                  <NavLink
+                    key={link.to}
+                    to={link.to}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={({ isActive }) => `text-3xl font-mono tracking-widest lowercase transition-colors ${isActive ? 'text-black' : 'text-black hover:text-[var(--primary)]'}`}
+                  >
+                    {link.label}
+                  </NavLink>
+                ))}
+              </nav>
+
+              <div className="pt-8 border-t border-gray-200 flex items-center gap-8 text-black">
+                <a href={`mailto:${primaryEmail}`} className="hover:text-[var(--primary)] transition-colors" aria-label="Email 2353274" title="Email">
+                  <MailIcon className="w-7 h-7" />
                 </a>
-              ) : null}
+                <a href={`tel:${phone || ''}`} className="hover:text-[var(--primary)] transition-colors" aria-label="Phone" title="Phone">
+                  <PhoneIcon className="w-7 h-7" />
+                </a>
+                {github ? (
+                  <a href={github} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors" aria-label="GitHub" title="GitHub">
+                    <GithubIcon className="w-7 h-7" />
+                  </a>
+                ) : null}
+              </div>
             </div>
           </div>
         )}

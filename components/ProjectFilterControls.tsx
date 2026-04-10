@@ -15,11 +15,11 @@ interface ProjectFilterControlsProps {
 }
 
 const sortOptions = {
-    'custom': 'Custom Order',
-    'date-desc': 'Date Added (Newest)',
-    'date-asc': 'Date Added (Oldest)',
-    'title-asc': 'Title (A-Z)',
-    'title-desc': 'Title (Z-A)',
+  'custom': 'Custom',
+  'date-desc': 'Latest',
+  'date-asc': 'Oldest',
+  'title-asc': 'Title A-Z',
+  'title-desc': 'Title Z-A',
 };
 
 const tagFilters = ['All', 'Individual', 'Team', 'Architure', 'HCI'];
@@ -42,7 +42,7 @@ const ProjectFilterControls: React.FC<ProjectFilterControlsProps> = ({
 
   return (
     <div className="mb-12 space-y-6">
-      <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+      <div className="relative z-30 flex flex-col md:flex-row items-center justify-center gap-4">
         {/* Search Input */}
         <div className="relative w-full max-w-lg">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -71,10 +71,10 @@ const ProjectFilterControls: React.FC<ProjectFilterControlsProps> = ({
                 <ChevronDownIcon className={`w-5 h-5 text-gray-500 transition-transform ${isSortOpen ? 'rotate-180' : ''}`}/>
             </button>
             {isSortOpen && (
-                <div 
-                    className="absolute top-full mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-xl z-10"
-                    onMouseLeave={() => setIsSortOpen(false)}
-                >
+              <div 
+                className="absolute top-full mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-xl z-50"
+                onMouseLeave={() => setIsSortOpen(false)}
+              >
                     {Object.entries(sortOptions).map(([key, value]) => (
                         <button
                             key={key}
@@ -89,7 +89,7 @@ const ProjectFilterControls: React.FC<ProjectFilterControlsProps> = ({
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center items-center gap-2">
+      <div className="relative z-0 flex flex-wrap justify-center items-center gap-2">
         {tagFilters.map(tag => (
           <button
             key={tag}
