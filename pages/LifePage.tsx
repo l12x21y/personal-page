@@ -130,13 +130,20 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
                 </div>
 
                 <div className="md:col-span-8">
-                  <div className={`grid grid-cols-1 sm:grid-cols-${Math.min(4, slotCount)} gap-4 md:gap-5`}>
-                    {slotArrays.map((arr, si) => (
-                      <div key={si}>
-                        {renderFrame(arr[activeForSection[si]] ?? null, si, arr, activeForSection[si] ?? 0)}
+                  {(() => {
+                    // Map slotCount to fixed Tailwind classes so Tailwind can generate them
+                    const capped = Math.min(4, slotCount);
+                    const gridColsClass = capped === 1 ? 'sm:grid-cols-1' : capped === 2 ? 'sm:grid-cols-2' : capped === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-4';
+                    return (
+                      <div className={`grid grid-cols-1 ${gridColsClass} gap-4 md:gap-5`}>
+                        {slotArrays.map((arr, si) => (
+                          <div key={si}>
+                            {renderFrame(arr[activeForSection[si]] ?? null, si, arr, activeForSection[si] ?? 0)}
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    );
+                  })()}
                 </div>
               </article>
             );
