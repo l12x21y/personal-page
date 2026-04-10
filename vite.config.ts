@@ -1,6 +1,7 @@
 import path from 'path';
 import { execFileSync } from 'child_process';
 import { defineConfig, loadEnv } from 'vite';
+import fs from 'fs';
 
 const generateScriptPath = path.resolve(__dirname, 'scripts', 'generate-portfolio-data.mjs');
 
@@ -21,6 +22,23 @@ const watchedRoots = [
 const shouldRegenerate = (filePath: string): boolean => {
   const normalized = path.resolve(filePath);
   return watchedRoots.some(root => normalized.startsWith(root));
+};
+
+const copyDirRecursive = (src: string, dist: string) => {
+  if (!fs.existsSync(src)) return;
+  if (!fs.existsSync(dist)) {
+    fs.mkdirSync(dist, { recursive: true });
+  }
+  const items = fs.readdirSync(src, { withFileTypes: true });
+  for (const item of items) {
+    const srcPath = path.join(src, item.name);
+    const distPath = path.join(dist, item.name);
+    if (item.isDirectory()) {
+      copyDirRecursive(srcPath, distPath);
+    } else {
+      fs.copyFileSync(srcPath, distPath);
+    }
+  }
 };
 
 export default defineConfig(({ mode }) => {
@@ -71,6 +89,22 @@ export default defineConfig(({ mode }) => {
             server.watcher.on('unlink', regenerateAndReload);
             server.watcher.on('addDir', regenerateAndReload);
             server.watcher.on('unlinkDir', regenerateAndReload);
+          },
+        },
+        {
+          name: 'copy-assets',
+          writeBundle() {
+            const baseDir = process.cwd();
+            const distDir = path.join(baseDir, 'dist');
+            
+            copyDirRecursive(
+              path.join(baseDir, 'Project'),
+              path.join(distDir, 'Project')
+            );
+            copyDirRecursive(
+              path.join(baseDir, 'Personal Info'),
+              path.join(distDir, 'Personal Info')
+            );
           },
         },
       ],
