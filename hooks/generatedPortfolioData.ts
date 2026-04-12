@@ -199,7 +199,7 @@ export const generatedPortfolioData: PortfolioData = {
       "text": "I like traveling to different places and experiencing different cultures.",
       "media": [
         {
-          "url": "Personal%20Info/LA.jpg",
+          "url": "Personal%20Info/kepler.png",
           "type": "image",
           "caption": "Travel moments",
           "slot": 0
