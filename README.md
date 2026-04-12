@@ -1,6 +1,6 @@
 # 访问链接
 
-https://github.com/l12x21y/personal-page
+https://l12x21y.github.io/personal-page/
 
 # Personal Portfolio
 
