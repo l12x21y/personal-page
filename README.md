@@ -1,3 +1,7 @@
+# 访问链接
+
+https://github.com/l12x21y/personal-page
+
 # Personal Portfolio
 
 A personal portfolio website built with React, TypeScript, and Vite. It presents a homepage, project gallery, about/life pages, and a resume page with a downloadable CV.
