@@ -32,6 +32,10 @@ const buildProjectSections = (images: ProjectImage[], mediaAssets: ProjectMedia[
             const name = block.mediaName || block.name || '';
             const found = mediaAssets.find((m) => m.name === name);
             if (found) out.push(found);
+          } else if (t === 'video') {
+            const name = block.mediaName || block.name || '';
+            const found = mediaAssets.find((m) => m.name === name);
+            if (found) out.push(found);
           } else if (t === 'gallery' || t === 'images') {
             const names = Array.isArray(block.mediaNames) ? block.mediaNames : Array.isArray(block.imageNames) ? block.imageNames : [];
             for (const name of names) {

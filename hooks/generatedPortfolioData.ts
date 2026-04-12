@@ -127,7 +127,7 @@ export const generatedPortfolioData: PortfolioData = {
       "id": 2,
       "title": "My Background",
       "text": "My academic training focuses on cities as spatial systems shaped by behavior, infrastructure, and data. Alongside this, I have been self-learning coding, which has gradually shifted my interest toward system-based and human-centered design approaches.",
-      "imageUrl": "Personal%20Info/Cover.JPG"
+      "imageUrl": "Personal%20Info/Background.jpg"
     },
     {
       "id": 3,
@@ -139,7 +139,7 @@ export const generatedPortfolioData: PortfolioData = {
       "id": 4,
       "title": "My Aspirations",
       "text": "I am currently interested in Human-Computer Interaction, especially at the intersection of spatial experience, systems, and human perception. In the future, I hope to design systems that better connect physical environments and human experience.",
-      "imageUrl": "Personal%20Info/Cover.JPG"
+      "imageUrl": "Personal%20Info/Aspiration.jpg"
     }
   ],
   "lifeSections": [
@@ -184,6 +184,12 @@ export const generatedPortfolioData: PortfolioData = {
           "type": "video",
           "caption": "Playlist moments",
           "slot": 0
+        },
+        {
+          "url": "Personal%20Info/Music2.mp4",
+          "type": "video",
+          "caption": "Playlist moments",
+          "slot": 1
         }
       ]
     },
@@ -239,12 +245,6 @@ export const generatedPortfolioData: PortfolioData = {
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/16%E5%89%96%E9%80%8F%E8%A7%86.jpg",
-          "name": "16剖透视.jpg",
-          "type": "image",
-          "description": ""
-        },
-        {
           "url": "Project/Riverside%20Gallery/17%E6%95%B4%E4%BD%93%E6%B8%B2%E6%9F%932.jpg",
           "name": "17整体渲染2.jpg",
           "type": "image",
@@ -269,20 +269,8 @@ export const generatedPortfolioData: PortfolioData = {
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/22%E6%A0%91.jpg",
-          "name": "22树.jpg",
-          "type": "image",
-          "description": ""
-        },
-        {
           "url": "Project/Riverside%20Gallery/23%E4%B8%8A%E6%A5%BC%E8%A7%86%E8%A7%92.jpg",
           "name": "23上楼视角.jpg",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Riverside%20Gallery/24%E6%99%AF%E8%A7%82%E9%9D%A2.jpg",
-          "name": "24景观面.jpg",
           "type": "image",
           "description": ""
         },
@@ -290,7 +278,7 @@ export const generatedPortfolioData: PortfolioData = {
           "url": "Project/Riverside%20Gallery/25%E8%BF%9E%E7%BB%AD%E5%B1%95%E5%8E%85.jpg",
           "name": "25连续展厅.jpg",
           "type": "image",
-          "description": "连续展厅剖面空间示意。"
+          "description": ""
         },
         {
           "url": "Project/Riverside%20Gallery/26.1%E5%92%96%E5%95%A1%E5%8E%852.jpg",
@@ -299,8 +287,8 @@ export const generatedPortfolioData: PortfolioData = {
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/27%E5%AE%A4%E5%A4%96%E5%B0%8F%E6%99%AF.jpg",
-          "name": "27室外小景.jpg",
+          "url": "Project/Riverside%20Gallery/%E6%A0%91.jpg",
+          "name": "树.jpg",
           "type": "image",
           "description": ""
         },
@@ -311,38 +299,44 @@ export const generatedPortfolioData: PortfolioData = {
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/Facade.jpg",
-          "name": "Facade.jpg",
+          "url": "Project/Riverside%20Gallery/More-4-.jpg",
+          "name": "More-4-.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/GeneralPlan.jpg",
-          "name": "GeneralPlan.jpg",
+          "url": "Project/Riverside%20Gallery/More-5-Generate.png",
+          "name": "More-5-Generate.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/Generate.png",
-          "name": "Generate.png",
+          "url": "Project/Riverside%20Gallery/More-6-GeneralPlan.jpg",
+          "name": "More-6-GeneralPlan.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/Location.jpg",
-          "name": "Location.jpg",
+          "url": "Project/Riverside%20Gallery/More-7-Plan.jpg",
+          "name": "More-7-Plan.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/Plan.jpg",
-          "name": "Plan.jpg",
+          "url": "Project/Riverside%20Gallery/More-8-Facade.jpg",
+          "name": "More-8-Facade.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/Section.jpg",
-          "name": "Section.jpg",
+          "url": "Project/Riverside%20Gallery/More-9-Section.jpg",
+          "name": "More-9-Section.jpg",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Riverside%20Gallery/More-10-16%E5%89%96%E9%80%8F%E8%A7%86.jpg",
+          "name": "More-10-16剖透视.jpg",
           "type": "image",
           "description": ""
         }
@@ -355,38 +349,6 @@ export const generatedPortfolioData: PortfolioData = {
             {
               "type": "text",
               "text": "项目背景、区位与设计出发点。"
-            },
-            {
-              "type": "image",
-              "mediaName": "Cover.jpg"
-            },
-            {
-              "type": "image",
-              "mediaName": "Location.jpg"
-            },
-            {
-              "type": "image",
-              "mediaName": "Generate.png"
-            }
-          ]
-        },
-        {
-          "title": "Technical",
-          "layout": "grid-4",
-          "content": [
-            {
-              "type": "text",
-              "text": "技术图类别下展示平面/立面/剖面等资料，便于理解构造与功能分区。"
-            },
-            {
-              "type": "gallery",
-              "layout": "grid-4",
-              "mediaNames": [
-                "GeneralPlan.jpg",
-                "Plan.jpg",
-                "Facade.jpg",
-                "Section.jpg"
-              ]
             }
           ]
         },
@@ -400,6 +362,18 @@ export const generatedPortfolioData: PortfolioData = {
             },
             {
               "type": "image",
+              "mediaName": "Cover.jpg"
+            },
+            {
+              "type": "image",
+              "mediaName": "17整体渲染2.jpg"
+            },
+            {
+              "type": "image",
+              "mediaName": "18路视角.jpg"
+            },
+            {
+              "type": "image",
               "mediaName": "20入口.jpg"
             },
             {
@@ -408,11 +382,19 @@ export const generatedPortfolioData: PortfolioData = {
             },
             {
               "type": "image",
-              "mediaName": "24景观面.jpg"
+              "mediaName": "树.jpg"
+            },
+            {
+              "type": "image",
+              "mediaName": "23上楼视角.jpg"
             },
             {
               "type": "image",
               "mediaName": "25连续展厅.jpg"
+            },
+            {
+              "type": "image",
+              "mediaName": "26.1咖啡厅2.jpg"
             }
           ]
         }
@@ -439,11 +421,6 @@ export const generatedPortfolioData: PortfolioData = {
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/16%E5%89%96%E9%80%8F%E8%A7%86.jpg",
-          "name": "16剖透视.jpg",
-          "description": ""
-        },
-        {
           "url": "Project/Riverside%20Gallery/17%E6%95%B4%E4%BD%93%E6%B8%B2%E6%9F%932.jpg",
           "name": "17整体渲染2.jpg",
           "description": ""
@@ -464,24 +441,14 @@ export const generatedPortfolioData: PortfolioData = {
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/22%E6%A0%91.jpg",
-          "name": "22树.jpg",
-          "description": ""
-        },
-        {
           "url": "Project/Riverside%20Gallery/23%E4%B8%8A%E6%A5%BC%E8%A7%86%E8%A7%92.jpg",
           "name": "23上楼视角.jpg",
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/24%E6%99%AF%E8%A7%82%E9%9D%A2.jpg",
-          "name": "24景观面.jpg",
-          "description": ""
-        },
-        {
           "url": "Project/Riverside%20Gallery/25%E8%BF%9E%E7%BB%AD%E5%B1%95%E5%8E%85.jpg",
           "name": "25连续展厅.jpg",
-          "description": "连续展厅剖面空间示意。"
+          "description": ""
         },
         {
           "url": "Project/Riverside%20Gallery/26.1%E5%92%96%E5%95%A1%E5%8E%852.jpg",
@@ -489,38 +456,43 @@ export const generatedPortfolioData: PortfolioData = {
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/27%E5%AE%A4%E5%A4%96%E5%B0%8F%E6%99%AF.jpg",
-          "name": "27室外小景.jpg",
+          "url": "Project/Riverside%20Gallery/%E6%A0%91.jpg",
+          "name": "树.jpg",
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/Facade.jpg",
-          "name": "Facade.jpg",
+          "url": "Project/Riverside%20Gallery/More-4-.jpg",
+          "name": "More-4-.jpg",
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/GeneralPlan.jpg",
-          "name": "GeneralPlan.jpg",
+          "url": "Project/Riverside%20Gallery/More-5-Generate.png",
+          "name": "More-5-Generate.png",
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/Generate.png",
-          "name": "Generate.png",
+          "url": "Project/Riverside%20Gallery/More-6-GeneralPlan.jpg",
+          "name": "More-6-GeneralPlan.jpg",
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/Location.jpg",
-          "name": "Location.jpg",
+          "url": "Project/Riverside%20Gallery/More-7-Plan.jpg",
+          "name": "More-7-Plan.jpg",
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/Plan.jpg",
-          "name": "Plan.jpg",
+          "url": "Project/Riverside%20Gallery/More-8-Facade.jpg",
+          "name": "More-8-Facade.jpg",
           "description": ""
         },
         {
-          "url": "Project/Riverside%20Gallery/Section.jpg",
-          "name": "Section.jpg",
+          "url": "Project/Riverside%20Gallery/More-9-Section.jpg",
+          "name": "More-9-Section.jpg",
+          "description": ""
+        },
+        {
+          "url": "Project/Riverside%20Gallery/More-10-16%E5%89%96%E9%80%8F%E8%A7%86.jpg",
+          "name": "More-10-16剖透视.jpg",
           "description": ""
         }
       ],
@@ -535,11 +507,10 @@ export const generatedPortfolioData: PortfolioData = {
       "id": 2,
       "slug": "Flexible Climate House",
       "title": "Flexible Climate House",
-      "description": "面向湿热与风环境的可变住宅原型研究。",
+      "description": "Research on the prototype of variable residences for future extreme environments.",
       "time": "2024.09-2025.01",
       "workType": [
-        "1",
-        "2"
+        "Team"
       ],
       "role": "Architecture",
       "tools": [
@@ -554,142 +525,10 @@ export const generatedPortfolioData: PortfolioData = {
       ],
       "mediaAssets": [
         {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_20.png",
-          "name": "（已压缩）A4总_20.png",
-          "type": "image",
-          "description": "项目总览版面。"
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_21.png",
-          "name": "（已压缩）A4总_21.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_22.png",
-          "name": "（已压缩）A4总_22.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_23.png",
-          "name": "（已压缩）A4总_23.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_24.png",
-          "name": "（已压缩）A4总_24.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_25.png",
-          "name": "（已压缩）A4总_25.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_26.png",
-          "name": "（已压缩）A4总_26.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_27.png",
-          "name": "（已压缩）A4总_27.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_28.png",
-          "name": "（已压缩）A4总_28.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_29.png",
-          "name": "（已压缩）A4总_29.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_30.png",
-          "name": "（已压缩）A4总_30.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_31.png",
-          "name": "（已压缩）A4总_31.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_32.png",
-          "name": "（已压缩）A4总_32.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_33.png",
-          "name": "（已压缩）A4总_33.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_34.png",
-          "name": "（已压缩）A4总_34.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_35.png",
-          "name": "（已压缩）A4总_35.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_39.png",
-          "name": "（已压缩）A4总_39.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_40.png",
-          "name": "（已压缩）A4总_40.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_41.png",
-          "name": "（已压缩）A4总_41.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_42.png",
-          "name": "（已压缩）A4总_42.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_43.png",
-          "name": "（已压缩）A4总_43.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_44.png",
-          "name": "（已压缩）A4总_44.png",
-          "type": "image",
-          "description": ""
-        },
-        {
           "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_63.png",
           "name": "（已压缩）A4总_63.png",
           "type": "image",
-          "description": "项目综合展示图。"
+          "description": ""
         },
         {
           "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_64.png",
@@ -701,125 +540,657 @@ export const generatedPortfolioData: PortfolioData = {
           "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_65.png",
           "name": "（已压缩）A4总_65.png",
           "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Background-1.png",
+          "name": "Background-1.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Background-2.png",
+          "name": "Background-2.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Background-3.png",
+          "name": "Background-3.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Background-4.png",
+          "name": "Background-4.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Background-5.png",
+          "name": "Background-5.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Cover.png",
+          "name": "Cover.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-1.png",
+          "name": "Manuscript-1.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-2.png",
+          "name": "Manuscript-2.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-3.png",
+          "name": "Manuscript-3.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-4.png",
+          "name": "Manuscript-4.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-5.png",
+          "name": "Manuscript-5.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-6.png",
+          "name": "Manuscript-6.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-7.png",
+          "name": "Manuscript-7.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-8.png",
+          "name": "Manuscript-8.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-9.png",
+          "name": "Manuscript-9.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-10.png",
+          "name": "Manuscript-10.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-11.png",
+          "name": "Manuscript-11.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-12.png",
+          "name": "Manuscript-12.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-1.png",
+          "name": "Prototype-1.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-2.png",
+          "name": "Prototype-2.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-3.png",
+          "name": "Prototype-3.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-4.png",
+          "name": "Prototype-4.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-5.png",
+          "name": "Prototype-5.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-6.png",
+          "name": "Prototype-6.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-7.png",
+          "name": "Prototype-7.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-8.png",
+          "name": "Prototype-8.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-9.png",
+          "name": "Prototype-9.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-10.png",
+          "name": "Prototype-10.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-11.png",
+          "name": "Prototype-11.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-12.png",
+          "name": "Prototype-12.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-13.png",
+          "name": "Prototype-13.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-14.png",
+          "name": "Prototype-14.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-15.png",
+          "name": "Prototype-15.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-16.png",
+          "name": "Prototype-16.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-17.png",
+          "name": "Prototype-17.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-1.png",
+          "name": "Sustainability-1.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-2.png",
+          "name": "Sustainability-2.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-3.png",
+          "name": "Sustainability-3.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-4.png",
+          "name": "Sustainability-4.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-5.png",
+          "name": "Sustainability-5.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-6.png",
+          "name": "Sustainability-6.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-7.png",
+          "name": "Sustainability-7.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-8.png",
+          "name": "Sustainability-8.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-9.png",
+          "name": "Sustainability-9.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-10.png",
+          "name": "Sustainability-10.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-11.png",
+          "name": "Sustainability-11.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-12.png",
+          "name": "Sustainability-12.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-13.png",
+          "name": "Sustainability-13.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-14.png",
+          "name": "Sustainability-14.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-15.png",
+          "name": "Sustainability-15.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-16.png",
+          "name": "Sustainability-16.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-17.png",
+          "name": "Sustainability-17.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-18.png",
+          "name": "Sustainability-18.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-19.png",
+          "name": "Sustainability-19.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-20.png",
+          "name": "Sustainability-20.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-21.png",
+          "name": "Sustainability-21.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability.png",
+          "name": "Sustainability.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/WALKER%20GUEST%20HOUSE.mp4",
+          "name": "WALKER GUEST HOUSE.mp4",
+          "type": "video",
           "description": ""
         }
       ],
-      "navSections": [],
+      "navSections": [
+        {
+          "title": "Introduction",
+          "layout": "grid-1",
+          "content": [
+            {
+              "type": "text",
+              "text": ""
+            },
+            {
+              "type": "video",
+              "mediaName": "WALKER GUEST HOUSE.mp4"
+            }
+          ]
+        },
+        {
+          "title": "Background",
+          "layout": "grid-3",
+          "content": [
+            {
+              "type": "text",
+              "text": ""
+            },
+            {
+              "type": "image",
+              "mediaName": "Background-1.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Background-2.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Background-3.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Background-4.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Background-5.png"
+            }
+          ]
+        },
+        {
+          "title": "Manuscript",
+          "layout": "grid-3",
+          "content": [
+            {
+              "type": "text",
+              "text": ""
+            },
+            {
+              "type": "image",
+              "mediaName": "Manuscript-1.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Manuscript-2.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Manuscript-3.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Manuscript-4.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Manuscript-5.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Manuscript-6.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Manuscript-7.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Manuscript-8.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Manuscript-9.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Manuscript-10.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Manuscript-11.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Manuscript-12.png"
+            }
+          ]
+        },
+        {
+          "title": "Prototype",
+          "layout": "grid-2",
+          "content": [
+            {
+              "type": "text",
+              "text": ""
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-1.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-2.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-1.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-5.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-6.png"
+            }
+          ]
+        },
+        {
+          "title": "Reconstruction",
+          "layout": "grid-3",
+          "content": [
+            {
+              "type": "text",
+              "text": ""
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-3.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-4.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-5.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-6.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-7.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-8.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-9.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-10.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-11.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-12.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-13.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-14.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-15.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-16.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Prototype-17.png"
+            }
+          ]
+        },
+        {
+          "title": "Sustainability",
+          "layout": "grid-3",
+          "content": [
+            {
+              "type": "text",
+              "text": ""
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-2.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-3.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-4.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-7.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-8.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-9.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-10.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-11.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-12.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-13.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-14.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-15.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-16.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-17.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-18.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-19.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-20.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Sustainability-21.png"
+            }
+          ]
+        }
+      ],
       "images": [
         {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_20.png",
-          "name": "（已压缩）A4总_20.png",
-          "description": "项目总览版面。"
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_21.png",
-          "name": "（已压缩）A4总_21.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_22.png",
-          "name": "（已压缩）A4总_22.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_23.png",
-          "name": "（已压缩）A4总_23.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_24.png",
-          "name": "（已压缩）A4总_24.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_25.png",
-          "name": "（已压缩）A4总_25.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_26.png",
-          "name": "（已压缩）A4总_26.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_27.png",
-          "name": "（已压缩）A4总_27.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_28.png",
-          "name": "（已压缩）A4总_28.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_29.png",
-          "name": "（已压缩）A4总_29.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_30.png",
-          "name": "（已压缩）A4总_30.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_31.png",
-          "name": "（已压缩）A4总_31.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_32.png",
-          "name": "（已压缩）A4总_32.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_33.png",
-          "name": "（已压缩）A4总_33.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_34.png",
-          "name": "（已压缩）A4总_34.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_35.png",
-          "name": "（已压缩）A4总_35.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_39.png",
-          "name": "（已压缩）A4总_39.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_40.png",
-          "name": "（已压缩）A4总_40.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_41.png",
-          "name": "（已压缩）A4总_41.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_42.png",
-          "name": "（已压缩）A4总_42.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_43.png",
-          "name": "（已压缩）A4总_43.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_44.png",
-          "name": "（已压缩）A4总_44.png",
+          "url": "Project/Flexible%20Climate%20House/Cover.png",
+          "name": "Cover.png",
           "description": ""
         },
         {
           "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_63.png",
           "name": "（已压缩）A4总_63.png",
-          "description": "项目综合展示图。"
+          "description": ""
         },
         {
           "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_64.png",
@@ -829,6 +1200,286 @@ export const generatedPortfolioData: PortfolioData = {
         {
           "url": "Project/Flexible%20Climate%20House/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89A4%E6%80%BB_65.png",
           "name": "（已压缩）A4总_65.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Background-1.png",
+          "name": "Background-1.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Background-2.png",
+          "name": "Background-2.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Background-3.png",
+          "name": "Background-3.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Background-4.png",
+          "name": "Background-4.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Background-5.png",
+          "name": "Background-5.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-1.png",
+          "name": "Manuscript-1.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-2.png",
+          "name": "Manuscript-2.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-3.png",
+          "name": "Manuscript-3.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-4.png",
+          "name": "Manuscript-4.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-5.png",
+          "name": "Manuscript-5.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-6.png",
+          "name": "Manuscript-6.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-7.png",
+          "name": "Manuscript-7.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-8.png",
+          "name": "Manuscript-8.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-9.png",
+          "name": "Manuscript-9.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-10.png",
+          "name": "Manuscript-10.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-11.png",
+          "name": "Manuscript-11.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Manuscript-12.png",
+          "name": "Manuscript-12.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-1.png",
+          "name": "Prototype-1.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-2.png",
+          "name": "Prototype-2.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-3.png",
+          "name": "Prototype-3.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-4.png",
+          "name": "Prototype-4.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-5.png",
+          "name": "Prototype-5.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-6.png",
+          "name": "Prototype-6.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-7.png",
+          "name": "Prototype-7.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-8.png",
+          "name": "Prototype-8.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-9.png",
+          "name": "Prototype-9.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-10.png",
+          "name": "Prototype-10.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-11.png",
+          "name": "Prototype-11.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-12.png",
+          "name": "Prototype-12.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-13.png",
+          "name": "Prototype-13.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-14.png",
+          "name": "Prototype-14.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-15.png",
+          "name": "Prototype-15.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-16.png",
+          "name": "Prototype-16.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Prototype-17.png",
+          "name": "Prototype-17.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-1.png",
+          "name": "Sustainability-1.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-2.png",
+          "name": "Sustainability-2.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-3.png",
+          "name": "Sustainability-3.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-4.png",
+          "name": "Sustainability-4.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-5.png",
+          "name": "Sustainability-5.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-6.png",
+          "name": "Sustainability-6.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-7.png",
+          "name": "Sustainability-7.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-8.png",
+          "name": "Sustainability-8.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-9.png",
+          "name": "Sustainability-9.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-10.png",
+          "name": "Sustainability-10.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-11.png",
+          "name": "Sustainability-11.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-12.png",
+          "name": "Sustainability-12.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-13.png",
+          "name": "Sustainability-13.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-14.png",
+          "name": "Sustainability-14.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-15.png",
+          "name": "Sustainability-15.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-16.png",
+          "name": "Sustainability-16.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-17.png",
+          "name": "Sustainability-17.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-18.png",
+          "name": "Sustainability-18.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-19.png",
+          "name": "Sustainability-19.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-20.png",
+          "name": "Sustainability-20.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability-21.png",
+          "name": "Sustainability-21.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Flexible%20Climate%20House/Sustainability.png",
+          "name": "Sustainability.png",
           "description": ""
         }
       ],
@@ -954,32 +1605,8 @@ export const generatedPortfolioData: PortfolioData = {
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/%E5%85%A5%E5%8F%A3.png",
-          "name": "入口.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Sea%20Within/%E8%BD%B4%E6%B5%8B.jpg",
-          "name": "轴测.jpg",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Sea%20Within/Detail.png",
-          "name": "Detail.png",
-          "type": "image",
-          "description": ""
-        },
-        {
           "url": "Project/Sea%20Within/experience.png",
           "name": "experience.png",
-          "type": "image",
-          "description": ""
-        },
-        {
-          "url": "Project/Sea%20Within/Facade.png",
-          "name": "Facade.png",
           "type": "image",
           "description": ""
         },
@@ -996,44 +1623,62 @@ export const generatedPortfolioData: PortfolioData = {
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/Generate.gif",
-          "name": "Generate.gif",
+          "url": "Project/Sea%20Within/More-1-history.png",
+          "name": "More-1-history.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/GenralPlan.png",
-          "name": "GenralPlan.png",
+          "url": "Project/Sea%20Within/More-2-Generate.gif",
+          "name": "More-2-Generate.gif",
           "type": "image",
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/history.png",
-          "name": "history.png",
+          "url": "Project/Sea%20Within/More-3-Transform.gif",
+          "name": "More-3-Transform.gif",
           "type": "image",
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/Plan.png",
-          "name": "Plan.png",
+          "url": "Project/Sea%20Within/More-4-%E8%BD%B4%E6%B5%8B.jpg",
+          "name": "More-4-轴测.jpg",
           "type": "image",
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/Section1.png",
-          "name": "Section1.png",
+          "url": "Project/Sea%20Within/More-5-GenralPlan.png",
+          "name": "More-5-GenralPlan.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/Section2.png",
-          "name": "Section2.png",
+          "url": "Project/Sea%20Within/More-6-Plan.png",
+          "name": "More-6-Plan.png",
           "type": "image",
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/Transform.gif",
-          "name": "Transform.gif",
+          "url": "Project/Sea%20Within/More-7-Section1.png",
+          "name": "More-7-Section1.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Sea%20Within/More-8-Section2.png",
+          "name": "More-8-Section2.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Sea%20Within/More-9-Facade.png",
+          "name": "More-9-Facade.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Sea%20Within/More-10-Detail.png",
+          "name": "More-10-Detail.png",
           "type": "image",
           "description": ""
         }
@@ -1063,12 +1708,17 @@ export const generatedPortfolioData: PortfolioData = {
           "layout": "grid-1",
           "mediaNames": [
             "frame_01.png",
+            "experience.png",
             "frame_02.png"
           ],
           "content": [
             {
               "type": "image",
               "mediaName": "frame_01.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "experience.png"
             },
             {
               "type": "image",
@@ -1079,38 +1729,54 @@ export const generatedPortfolioData: PortfolioData = {
         {
           "title": "Experience",
           "layout": "grid-3",
-          "mediaNames": [
-            "20入口.jpg",
-            "21门厅.jpg",
-            "24景观面.jpg",
-            "25连续展厅.jpg"
-          ],
           "content": [
             {
               "type": "image",
-              "mediaName": "20入口.jpg"
+              "mediaName": "2-柱廊.jpg"
             },
             {
               "type": "image",
-              "mediaName": "21门厅.jpg"
+              "mediaName": "3-多功能剧场.png"
             },
             {
               "type": "image",
-              "mediaName": "24景观面.jpg"
+              "mediaName": "4-极深.png"
             },
             {
               "type": "image",
-              "mediaName": "25连续展厅.jpg"
-            }
-          ]
-        },
-        {
-          "title": "Experience",
-          "layout": "grid-2",
-          "content": [
+              "mediaName": "5-景观展厅.png"
+            },
             {
-              "type": "text",
-              "html": "开头介绍，概述设计目标和情境。"
+              "type": "image",
+              "mediaName": "6-景观展厅.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "1-Cover.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "8-曲线走道.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "9-3F柱廊.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "10-极低.jpg"
+            },
+            {
+              "type": "image",
+              "mediaName": "11-空中步道.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "场景50-1-1.jpg"
+            },
+            {
+              "type": "image",
+              "mediaName": "13-极长.jpg"
             },
             {
               "type": "image",
@@ -1121,16 +1787,8 @@ export const generatedPortfolioData: PortfolioData = {
               "mediaName": "15-咖啡.png"
             },
             {
-              "type": "text",
-              "html": "中段说明，解释空间序列与关键节点。"
-            },
-            {
               "type": "image",
-              "mediaName": "24景观面.jpg"
-            },
-            {
-              "type": "text",
-              "html": "结尾总结或下一步说明。"
+              "mediaName": "16-咖啡厅.png"
             }
           ]
         },
@@ -1216,28 +1874,8 @@ export const generatedPortfolioData: PortfolioData = {
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/%E5%85%A5%E5%8F%A3.png",
-          "name": "入口.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Sea%20Within/%E8%BD%B4%E6%B5%8B.jpg",
-          "name": "轴测.jpg",
-          "description": ""
-        },
-        {
-          "url": "Project/Sea%20Within/Detail.png",
-          "name": "Detail.png",
-          "description": ""
-        },
-        {
           "url": "Project/Sea%20Within/experience.png",
           "name": "experience.png",
-          "description": ""
-        },
-        {
-          "url": "Project/Sea%20Within/Facade.png",
-          "name": "Facade.png",
           "description": ""
         },
         {
@@ -1251,38 +1889,53 @@ export const generatedPortfolioData: PortfolioData = {
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/Generate.gif",
-          "name": "Generate.gif",
+          "url": "Project/Sea%20Within/More-1-history.png",
+          "name": "More-1-history.png",
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/GenralPlan.png",
-          "name": "GenralPlan.png",
+          "url": "Project/Sea%20Within/More-2-Generate.gif",
+          "name": "More-2-Generate.gif",
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/history.png",
-          "name": "history.png",
+          "url": "Project/Sea%20Within/More-3-Transform.gif",
+          "name": "More-3-Transform.gif",
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/Plan.png",
-          "name": "Plan.png",
+          "url": "Project/Sea%20Within/More-4-%E8%BD%B4%E6%B5%8B.jpg",
+          "name": "More-4-轴测.jpg",
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/Section1.png",
-          "name": "Section1.png",
+          "url": "Project/Sea%20Within/More-5-GenralPlan.png",
+          "name": "More-5-GenralPlan.png",
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/Section2.png",
-          "name": "Section2.png",
+          "url": "Project/Sea%20Within/More-6-Plan.png",
+          "name": "More-6-Plan.png",
           "description": ""
         },
         {
-          "url": "Project/Sea%20Within/Transform.gif",
-          "name": "Transform.gif",
+          "url": "Project/Sea%20Within/More-7-Section1.png",
+          "name": "More-7-Section1.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Sea%20Within/More-8-Section2.png",
+          "name": "More-8-Section2.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Sea%20Within/More-9-Facade.png",
+          "name": "More-9-Facade.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Sea%20Within/More-10-Detail.png",
+          "name": "More-10-Detail.png",
           "description": ""
         }
       ],
@@ -1416,7 +2069,7 @@ export const generatedPortfolioData: PortfolioData = {
             },
             {
               "type": "text",
-              "html": "<strong style='color:#9dd3ff; font-size:22px; font-weight:700;'>How might we represent personality as a dynamic and evolving system that supports deeper self-expression and more meaningful social interaction?</strong>"
+              "html": "<strong style='color:#9dd3ff; font-size:30px; font-weight:700;'>How might we represent personality as a dynamic and evolving system that supports deeper self-expression and more meaningful social interaction?</strong>"
             }
           ]
         },
@@ -1562,6 +2215,191 @@ export const generatedPortfolioData: PortfolioData = {
         "Prototype",
         "HCI",
         "LLM"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "Music City",
+      "title": "Music City",
+      "description": "Project Music City",
+      "time": "2026.3-Present",
+      "workType": "Team",
+      "role": [
+        "Data Analyst",
+        "Urban Planner"
+      ],
+      "tools": [
+        "Python",
+        "GIS"
+      ],
+      "skills": [
+        "Programming",
+        "Data Analysis",
+        "Data Visualization"
+      ],
+      "mediaAssets": [
+        {
+          "url": "Project/Music%20City/Cover.png",
+          "name": "Cover.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Music%20City/Scene1.png",
+          "name": "Scene1.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Music%20City/Scene2.png",
+          "name": "Scene2.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Music%20City/Scene3.png",
+          "name": "Scene3.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Music%20City/Scene4.png",
+          "name": "Scene4.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Music%20City/Stage1.png",
+          "name": "Stage1.png",
+          "type": "image",
+          "description": ""
+        },
+        {
+          "url": "Project/Music%20City/Stage2.png",
+          "name": "Stage2.png",
+          "type": "image",
+          "description": ""
+        }
+      ],
+      "navSections": [
+        {
+          "title": "Problem",
+          "layout": "grid-1",
+          "content": [
+            {
+              "type": "text",
+              "html": ""
+            },
+            {}
+          ]
+        },
+        {
+          "title": "Data Analysis",
+          "layout": "grid-1",
+          "content": [
+            {
+              "type": "text",
+              "html": ""
+            },
+            {
+              "type": "image",
+              "mediaName": "Stage1.png"
+            }
+          ]
+        },
+        {
+          "title": "Design Intervention",
+          "layout": "grid-1",
+          "content": [
+            {
+              "type": "text",
+              "html": ""
+            },
+            {
+              "type": "image",
+              "mediaName": "Stage2.png"
+            }
+          ]
+        },
+        {
+          "title": "Scene",
+          "layout": "grid-2",
+          "content": [
+            {
+              "type": "text",
+              "html": ""
+            },
+            {
+              "type": "image",
+              "mediaName": "Scene1.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Scene2.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Scene3.png"
+            },
+            {
+              "type": "image",
+              "mediaName": "Scene4.png"
+            }
+          ]
+        },
+        {
+          "title": "Reflection",
+          "layout": "grid-1",
+          "content": [
+            {
+              "type": "text",
+              "html": ""
+            },
+            {}
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "Project/Music%20City/Cover.png",
+          "name": "Cover.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Music%20City/Scene1.png",
+          "name": "Scene1.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Music%20City/Scene2.png",
+          "name": "Scene2.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Music%20City/Scene3.png",
+          "name": "Scene3.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Music%20City/Scene4.png",
+          "name": "Scene4.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Music%20City/Stage1.png",
+          "name": "Stage1.png",
+          "description": ""
+        },
+        {
+          "url": "Project/Music%20City/Stage2.png",
+          "name": "Stage2.png",
+          "description": ""
+        }
+      ],
+      "tags": [
+        "Teamwork",
+        "Data Analysis",
+        "Urban Planning"
       ]
     }
   ],

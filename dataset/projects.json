@@ -15,18 +15,7 @@
         "title": "Background",
         "layout": "grid-3",
         "content": [
-          { "type": "text", "text": "项目背景、区位与设计出发点。" },
-          { "type": "image", "mediaName": "Cover.jpg" },
-          { "type": "image", "mediaName": "Location.jpg" },
-          { "type": "image", "mediaName": "Generate.png" }
-        ]
-      },
-      {
-        "title": "Technical",
-        "layout": "grid-4",
-        "content": [
-          { "type": "text", "text": "技术图类别下展示平面/立面/剖面等资料，便于理解构造与功能分区。" },
-          { "type": "gallery", "layout": "grid-4", "mediaNames": ["GeneralPlan.jpg", "Plan.jpg", "Facade.jpg", "Section.jpg"] }
+          { "type": "text", "text": "项目背景、区位与设计出发点。" }
         ]
       },
       {
@@ -34,19 +23,19 @@
         "layout": "grid-3",
         "content": [
           { "type": "text", "text": "描述空间序列、步行路径与关键体验节点。" },
+          { "type": "image", "mediaName": "Cover.jpg" },
+          { "type": "image", "mediaName": "17整体渲染2.jpg" },
+          { "type": "image", "mediaName": "18路视角.jpg" },
           { "type": "image", "mediaName": "20入口.jpg" },
           { "type": "image", "mediaName": "21门厅.jpg" },
-          { "type": "image", "mediaName": "24景观面.jpg" },
-          { "type": "image", "mediaName": "25连续展厅.jpg" }
+          { "type": "image", "mediaName": "树.jpg" },
+          { "type": "image", "mediaName": "23上楼视角.jpg" },
+          { "type": "image", "mediaName": "25连续展厅.jpg" },
+          { "type": "image", "mediaName": "26.1咖啡厅2.jpg" }
         ]
       }
     ],
     "imageDescriptions": {
-      "1封面效果图.jpg": "项目整体封面视角。",
-      "14功能流线图.jpg": "展示公共与私密功能分区及流线关系。",
-      "15气泡图.jpg": "空间关系与联系强弱分析。",
-      "19平面.jpg": "平面布局与主要功能区组织。",
-      "25连续展厅.jpg": "连续展厅剖面空间示意。"
     }
   },
 
@@ -64,13 +53,113 @@
     "skills": ["Environmental Analysis", "Systems Thinking"],
     "tags": ["Teamwork", "Climate", "Prototype","Architecture"],
     "time": "2024.09-2025.01",
-    "workType": ["1", "2"],
+    "workType": ["Team"],
     "role": "Architecture",
-    "description": "面向湿热与风环境的可变住宅原型研究。",
-    "cover": "（已压缩）A4总_20.png",
+    "description": "Research on the prototype of variable residences for future extreme environments.",
+    "cover": "Cover.png",
+    "navSections": [
+      {
+        "title": "Introduction",
+        "layout": "grid-1",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "video", "mediaName": "WALKER GUEST HOUSE.mp4" }
+        ]
+      },
+      {
+        "title": "Background",
+        "layout": "grid-3",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "image", "mediaName": "Background-1.png" },
+          { "type": "image", "mediaName": "Background-2.png" },
+          { "type": "image", "mediaName": "Background-3.png" },
+          { "type": "image", "mediaName": "Background-4.png" },
+          { "type": "image", "mediaName": "Background-5.png" }
+        ]
+      },
+      
+      {
+        "title": "Manuscript",
+        "layout": "grid-3",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "image", "mediaName": "Manuscript-1.png" },
+          { "type": "image", "mediaName": "Manuscript-2.png" },
+          { "type": "image", "mediaName": "Manuscript-3.png" },
+          { "type": "image", "mediaName": "Manuscript-4.png" },
+          { "type": "image", "mediaName": "Manuscript-5.png" },
+          { "type": "image", "mediaName": "Manuscript-6.png" },
+          { "type": "image", "mediaName": "Manuscript-7.png" },
+          { "type": "image", "mediaName": "Manuscript-8.png" },
+          { "type": "image", "mediaName": "Manuscript-9.png" },
+          { "type": "image", "mediaName": "Manuscript-10.png" },
+          { "type": "image", "mediaName": "Manuscript-11.png" },
+          { "type": "image", "mediaName": "Manuscript-12.png" }
+        ]
+      },
+      {
+        "title": "Prototype",
+        "layout": "grid-2",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "image", "mediaName": "Prototype-1.png" },
+          { "type": "image", "mediaName": "Prototype-2.png" },
+          { "type": "image", "mediaName": "Sustainability.png" },
+          { "type": "image", "mediaName": "Sustainability-1.png" },
+          { "type": "image", "mediaName": "Sustainability-5.png" },
+          { "type": "image", "mediaName": "Sustainability-6.png" }
+        ]
+      },
+      {
+        "title": "Reconstruction",
+        "layout": "grid-3",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "image", "mediaName": "Prototype-3.png" },
+          { "type": "image", "mediaName": "Prototype-4.png" },
+          { "type": "image", "mediaName": "Prototype-5.png" },
+          { "type": "image", "mediaName": "Prototype-6.png" },
+          { "type": "image", "mediaName": "Prototype-7.png" },
+          { "type": "image", "mediaName": "Prototype-8.png" },
+          { "type": "image", "mediaName": "Prototype-9.png" },
+          { "type": "image", "mediaName": "Prototype-10.png" },
+          { "type": "image", "mediaName": "Prototype-11.png" },
+          { "type": "image", "mediaName": "Prototype-12.png" },
+          { "type": "image", "mediaName": "Prototype-13.png" },
+          { "type": "image", "mediaName": "Prototype-14.png" },
+          { "type": "image", "mediaName": "Prototype-15.png" },
+          { "type": "image", "mediaName": "Prototype-16.png" },
+          { "type": "image", "mediaName": "Prototype-17.png" }
+        ]
+      },
+      {
+        "title": "Sustainability",
+        "layout": "grid-3",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "image", "mediaName": "Sustainability-2.png" },
+          { "type": "image", "mediaName": "Sustainability-3.png" },
+          { "type": "image", "mediaName": "Sustainability-4.png" },
+          { "type": "image", "mediaName": "Sustainability-7.png" },
+          { "type": "image", "mediaName": "Sustainability-8.png" },
+          { "type": "image", "mediaName": "Sustainability-9.png" },
+          { "type": "image", "mediaName": "Sustainability-10.png" },
+          { "type": "image", "mediaName": "Sustainability-11.png" },
+          { "type": "image", "mediaName": "Sustainability-12.png" },
+          { "type": "image", "mediaName": "Sustainability-13.png" },
+          { "type": "image", "mediaName": "Sustainability-14.png" },
+          { "type": "image", "mediaName": "Sustainability-15.png" },
+          { "type": "image", "mediaName": "Sustainability-16.png" },
+          { "type": "image", "mediaName": "Sustainability-17.png" },
+          { "type": "image", "mediaName": "Sustainability-18.png" },
+          { "type": "image", "mediaName": "Sustainability-19.png" },
+          { "type": "image", "mediaName": "Sustainability-20.png" },
+          { "type": "image", "mediaName": "Sustainability-21.png" }
+        ]
+      }
+    ],
     "imageDescriptions": {
-      "（已压缩）A4总_20.png": "项目总览版面。",
-      "（已压缩）A4总_63.png": "项目综合展示图。"
     }
   },
 
@@ -103,23 +192,27 @@
         "title": "Generative Design",
         "text": "基于GAN的生成设计探索。",
         "layout": "grid-1",
-        "mediaNames": ["frame_01.png","frame_02.png"]
-      },
-      {
-        "title": "Experience",
-        "layout": "grid-3",
-        "mediaNames": ["20入口.jpg", "21门厅.jpg", "24景观面.jpg", "25连续展厅.jpg"]
+        "mediaNames": ["frame_01.png","experience.png","frame_02.png"]
       },
       {
       "title": "Experience",
-      "layout": "grid-2",
+      "layout": "grid-3",
       "content": [
-       { "type": "text", "html": "开头介绍，概述设计目标和情境。" },
+       { "type": "image", "mediaName": "2-柱廊.jpg" },
+       { "type": "image", "mediaName": "3-多功能剧场.png" },
+       { "type": "image", "mediaName": "4-极深.png" },
+       { "type": "image", "mediaName": "5-景观展厅.png" },
+       { "type": "image", "mediaName": "6-景观展厅.png" },
+       { "type": "image", "mediaName": "1-Cover.png" },
+       { "type": "image", "mediaName": "8-曲线走道.png" },
+       { "type": "image", "mediaName": "9-3F柱廊.png" },
+       { "type": "image", "mediaName": "10-极低.jpg" },
+       { "type": "image", "mediaName": "11-空中步道.png" },
+       { "type": "image", "mediaName": "场景50-1-1.jpg" },
+       { "type": "image", "mediaName": "13-极长.jpg" },
        { "type": "image", "mediaName": "14-景观步道.png" },
        { "type": "image", "mediaName": "15-咖啡.png" },
-       { "type": "text", "html": "中段说明，解释空间序列与关键节点。" },
-       { "type": "image", "mediaName": "24景观面.jpg" },
-       { "type": "text", "html": "结尾总结或下一步说明。" }
+       { "type": "image", "mediaName": "16-咖啡厅.png" }
       ]
       },
       {
@@ -169,7 +262,7 @@
        {"type": "text", "html": "· Systems fail to support meaningful, ongoing interaction" },
        { "type": "image", "mediaName": "Persona1.png" },
        { "type": "image", "mediaName": "Persona2.png" },
-       { "type": "text", "html": "<strong style='color:#9dd3ff; font-size:22px; font-weight:700;'>How might we represent personality as a dynamic and evolving system that supports deeper self-expression and more meaningful social interaction?</strong>" }
+       { "type": "text", "html": "<strong style='color:#9dd3ff; font-size:30px; font-weight:700;'>How might we represent personality as a dynamic and evolving system that supports deeper self-expression and more meaningful social interaction?</strong>" }
       ]
       },
       {
@@ -211,5 +304,70 @@
       }
     ],
     "imageDescriptions": {}
+  },
+
+
+
+
+
+
+
+
+
+  {
+    "folder": "Music City",
+    "title": "Music City",
+    "tools": ["Python", "GIS"],
+    "skills": ["Programming", "Data Analysis", "Data Visualization"],
+    "tags": ["Teamwork", "Data Analysis", "Urban Planning"],
+    "time": "2026.3-Present",
+    "workType": "Team",
+    "role": ["Data Analyst", "Urban Planner"],
+    "description": "",
+    "navSections": [
+      {
+        "title": "Problem",
+        "layout": "grid-1",
+        "content": [
+       { "type": "text", "html": "" },
+       {}
+      ]
+      },
+      {
+        "title": "Data Analysis",
+        "layout": "grid-1",
+        "content": [
+       { "type": "text", "html": "" },
+       { "type": "image", "mediaName": "Stage1.png" }
+      ]
+      },
+      {
+        "title": "Design Intervention",
+        "layout": "grid-1",
+        "content": [
+       { "type": "text", "html": "" },
+       { "type": "image", "mediaName": "Stage2.png" }
+      ]
+       },
+       {
+        "title": "Scene",
+        "layout": "grid-2",
+        "content": [
+       { "type": "text", "html": "" },
+       { "type": "image", "mediaName": "Scene1.png" },
+       { "type": "image", "mediaName": "Scene2.png" },
+       { "type": "image", "mediaName": "Scene3.png" },
+       { "type": "image", "mediaName": "Scene4.png" }
+        ]
+       },
+      {
+        "title": "Reflection",
+        "layout": "grid-1",
+        "content": [
+       { "type": "text", "html": "" },
+       { }
+      ]
+      }
+    ]
   }
 ]

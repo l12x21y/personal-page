@@ -61,6 +61,55 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
     <div className="w-full px-4 sm:px-6 lg:px-8">
       <section id="life" className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl space-y-14 md:space-y-18">
+          {/* Lead paragraph at top — large text with keywords highlighted in blue */}
+          <div>
+            <p
+              className="text-3xl sm:text-4xl md:text-5xl mb-6"
+              style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300, lineHeight: 1.6 }}
+            >
+              {(() => {
+                const lead = `I pay attention to everyday moments, atmospheres, and subtle shifts in perception.`;
+                const keywords = ['moments', 'atmospheres', 'subtle shifts'];
+                const nodes: React.ReactNode[] = [];
+                let cursor = 0;
+
+                while (cursor < lead.length) {
+                  let foundIndex = -1;
+                  let foundKey = '';
+                  for (const kw of keywords) {
+                    const re = new RegExp('\\b' + kw.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&') + '\\b', 'i');
+                    const match = re.exec(lead.slice(cursor));
+                    if (match) {
+                      const idx = match.index + cursor;
+                      if (foundIndex === -1 || idx < foundIndex) {
+                        foundIndex = idx;
+                        foundKey = match[0];
+                      }
+                    }
+                  }
+
+                  if (foundIndex === -1) {
+                    nodes.push(lead.slice(cursor));
+                    break;
+                  }
+
+                  if (foundIndex > cursor) {
+                    nodes.push(lead.slice(cursor, foundIndex));
+                  }
+
+                  nodes.push(
+                    <span key={cursor + '-' + foundIndex} className="text-sky-400">
+                      {lead.slice(foundIndex, foundIndex + foundKey.length)}
+                    </span>
+                  );
+
+                  cursor = foundIndex + foundKey.length;
+                }
+
+                return nodes;
+              })()}
+            </p>
+          </div>
           {lifeSections.map((section) => {
             const slotCount = slotCountForSection(section);
 
@@ -80,25 +129,33 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
             ) => {
               if (!mediaItem) {
                 return (
-                  <div className="p-3 shadow-lg bg-[var(--primary)]/6 border border-[var(--primary)]/20 rounded-lg">
-                    <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center text-gray-500">No image</div>
+                  <div className="relative transition-transform duration-500 hover:rotate-0 hover:translate-y-[-4px]">
+                    <div className="relative rounded-[18px] bg-[#fbfeff] shadow-[0_18px_40px_rgba(130,146,168,0.12)] p-3 sm:p-4 border border-[#d5e7f3]">
+                      <div className="overflow-hidden rounded-[4px] bg-gray-100 flex items-center justify-center text-gray-500 py-8">No image</div>
+                      <p className="mt-4 text-center text-[0.96rem] sm:text-[1.02rem] tracking-[0.12em] text-[#57809f] font-mono uppercase">{section.title}</p>
+                    </div>
                   </div>
                 );
               }
 
               return (
-                <figure className="relative p-3 shadow-lg transition-transform duration-400 bg-[var(--primary)]/6 border border-[var(--primary)]/20 rounded-lg">
-                  <div className="aspect-[4/3] overflow-hidden bg-white">
-                    {mediaItem.type === 'video' ? (
-                      <video src={getAssetUrl(mediaItem.url)} controls className="w-full h-full object-cover" preload="metadata" />
-                    ) : (
-                      <img src={getAssetUrl(mediaItem.url)} alt={mediaItem.caption || section.title} className="w-full h-full object-cover" />
-                    )}
-                  </div>
-                  <div className="mt-3 flex items-center justify-between gap-3">
-                    <figcaption className="text-sm text-gray-600 min-h-5">{mediaItem.caption || ''}</figcaption>
+                <div className="relative transition-transform duration-500 hover:rotate-0 hover:translate-y-[-4px]">
+                  <div className="absolute -top-4 left-[42%] w-28 h-9 bg-[#dff3e8]/75 rounded-sm shadow-sm"></div>
+                  <div className="relative rounded-[18px] bg-[#fbfeff] shadow-[0_18px_40px_rgba(130,146,168,0.12)] p-3 sm:p-4 border border-[#d5e7f3]">
+                    <div className="overflow-hidden rounded-[4px] bg-[#f7fbff]">
+                      {mediaItem.type === 'video' ? (
+                        <video src={getAssetUrl(mediaItem.url)} controls className="w-full h-auto" preload="metadata" />
+                      ) : (
+                        <img src={getAssetUrl(mediaItem.url)} alt={mediaItem.caption || section.title} className="w-full h-auto object-cover" />
+                      )}
+                    </div>
+
+                    <p className="mt-4 text-center text-[0.96rem] sm:text-[1.02rem] tracking-[0.12em] text-[#57809f] font-mono uppercase">
+                      {mediaItem.caption || section.title}
+                    </p>
+
                     {frameList.length > 1 ? (
-                      <div className="flex items-center gap-2">
+                      <div className="mt-3 flex items-center justify-center gap-3">
                         <button
                           type="button"
                           onClick={() => goPrevFrame(section.id, slotIdx, frameList.length)}
@@ -121,7 +178,7 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
                       </div>
                     ) : null}
                   </div>
-                </figure>
+                </div>
               );
             };
 
@@ -135,7 +192,7 @@ const LifePage: React.FC<LifePageProps> = ({ portfolioData }) => {
                 </div>
 
                 <div className="md:col-span-8">
-                  <div className={`grid grid-cols-1 ${getColumnsClass(slotCount)} gap-4 md:gap-5`}>
+                  <div className={`grid grid-cols-1 ${getColumnsClass(slotCount)} gap-4 md:gap-5 items-start`}>
                     {slotArrays.map((arr, si) => (
                       <div key={si}>
                         {renderFrame(arr[activeForSection[si]] ?? null, si, arr, activeForSection[si] ?? 0)}

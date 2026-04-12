@@ -34,16 +34,28 @@
     "text": "Music is part of my design process. I often build playlists to match different phases of ideation, modeling, and writing.",
     "media": [
       {
-        "url": "Personal Info/Music.jpg",
-        "type": "image",
-        "caption": "Playlist cover",
-        "slot": 0
-      },
-      {
         "url": "Personal Info/Music.mp4",
         "type": "video",
         "caption": "Playlist moments",
+        "slot": 0
+      },
+      {
+        "url": "Personal Info/Music2.mp4",
+        "type": "video",
+        "caption": "Playlist moments",
         "slot": 1
+      }
+    ]
+  },
+  {
+    "title": "Travel Lover",
+    "text": "I like traveling to different places and experiencing different cultures.",
+    "media": [
+      {
+        "url": "Personal Info/LA.jpg",
+        "type": "image",
+        "caption": "Travel moments",
+        "slot": 0
       }
     ]
   }
