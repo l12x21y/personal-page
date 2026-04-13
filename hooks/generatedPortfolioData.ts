@@ -1704,25 +1704,45 @@ export const generatedPortfolioData: PortfolioData = {
       "navSections": [
         {
           "title": "Movitation",
-          "text": "当城市记忆不再以清晰、稳定的形态存在，建筑是否仍能成为承载记忆的媒介？在快速更新的城市语境中，那些模糊、断裂、难以言说的感知经验，是否只能被忽略，或被简化为符号化的再现？"
+          "content": [
+            {
+              "type": "text",
+              "text": "<strong style='color:#9dd3ff; font-size:26px; font-weight:700;'>When urban memory no longer exists in a clear and stable form, can architecture still serve as a medium that carries memory? In a rapidly changing urban context, are those vague, fragmented, and difficult-to-articulate perceptual experiences destined to be ignored, or reduced to simplified symbolic representations?</strong>"
+            },
+            {
+              "type": "text",
+              "text": "当城市记忆不再以清晰、稳定的形态存在，建筑是否仍能成为承载记忆的媒介？在快速更新的城市语境中，那些模糊、断裂、难以言说的感知经验，是否只能被忽略，或被简化为符号化的再现？"
+            }
+          ]
         },
         {
           "title": "Inspiration",
-          "text": "复兴岛并非一个被清晰书写进城市叙事中的场所。在多次实地踏勘中发现，复兴岛最显著的特征并不在于具体建筑，而在于其界面状态。陆地与江水之间并不存在明确的转换空间，防汛墙既是安全设施，也是感知的阻隔；水面与天际在视觉上不断延伸，却在身体层面始终不可抵达。岛上的行走经验并不连贯，空间在开放与封闭之间频繁切换，形成一种节奏断裂却又真实存在的感知状态。更重要的是，复兴岛所承载的并非完整、清晰的城市记忆，而是一种模糊、碎片化的记忆残留。这种状态并非简单的“衰败”，而是一种尚未被重新命名的中间状态 —— 既未被彻底遗忘，也未被重新占有。在这种游离、悬置的空间状态下，复兴岛更适合作为感知发生的场所，其天然存在的二分关系与未完成状态，成为设计的起点。因此，设计并未试图通过建筑为场地“补全意义”，而是将这些未被解决的空间关系本身视为建筑概念的核心来源：陆与水、开放与阻隔、可达与不可达、清晰与模糊，这些并存却未被调和的状态。建筑不再被理解为对场地的覆盖或修复，而是一种介入方式：通过对界面的重新组织，使抽象的二分关系被转译为可被行走、可被感知的空间经验。",
           "layout": "grid-3",
-          "mediaNames": [
-            "history.jpg"
-          ],
           "content": [
             {
+              "type": "text",
+              "text": "Fuxing Island is not a place clearly inscribed within the city’s dominant narrative. Through multiple site visits, it became evident that its most defining condition lies not in its buildings, but in its edges. Between land and river, there is no clear transitional space; the floodwall acts both as a safety structure and a perceptual barrier. Visually, water and sky extend continuously, yet remain physically inaccessible. The experience of movement on the island is fragmented, with spatial conditions constantly shifting between openness and enclosure, producing a disrupted yet tangible rhythm of perception."
+            },
+            {
+              "type": "text",
+              "text": "More importantly, Fuxing Island does not carry a coherent urban memory, but rather fragmented and indistinct residues of it. This is not simply a condition of decay, but an in-between state that has not yet been redefined—neither fully forgotten nor fully reoccupied. In this suspended condition, the island becomes a site where perception itself takes precedence. Its inherent dualities and unfinished state form the starting point of the design."
+            },
+            {
+              "type": "text",
+              "text": "Rather than using architecture to “complete” the site, the project treats these unresolved spatial relationships as its core. Land and water, openness and barrier, accessibility and inaccessibility, clarity and ambiguity coexist without resolution. Architecture is understood not as a covering or repair, but as an act of mediation: reorganizing the interface to translate these abstract dualities into tangible spatial experiences that can be walked through and perceived."
+            },
+            {
+              "type": "text",
+              "text": "复兴岛并非一个被清晰书写进城市叙事中的场所。在多次实地踏勘中发现，复兴岛最显著的特征并不在于具体建筑，而在于其界面状态。陆地与江水之间并不存在明确的转换空间，防汛墙既是安全设施，也是感知的阻隔；水面与天际在视觉上不断延伸，却在身体层面始终不可抵达。岛上的行走经验并不连贯，空间在开放与封闭之间频繁切换，形成一种节奏断裂却又真实存在的感知状态。更重要的是，复兴岛所承载的并非完整、清晰的城市记忆，而是一种模糊、碎片化的记忆残留。这种状态并非简单的“衰败”，而是一种尚未被重新命名的中间状态 —— 既未被彻底遗忘，也未被重新占有。在这种游离、悬置的空间状态下，复兴岛更适合作为感知发生的场所，其天然存在的二分关系与未完成状态，成为设计的起点。因此，设计并未试图通过建筑为场地“补全意义”，而是将这些未被解决的空间关系本身视为建筑概念的核心来源：陆与水、开放与阻隔、可达与不可达、清晰与模糊，这些并存却未被调和的状态。建筑不再被理解为对场地的覆盖或修复，而是一种介入方式：通过对界面的重新组织，使抽象的二分关系被转译为可被行走、可被感知的空间经验。"
+            },
+            {
               "type": "image",
-              "mediaName": "history.jpg"
+              "mediaName": "Inspiration-1.png"
             }
           ]
         },
         {
           "title": "Generative Prototyping",
-          "text": "基于GAN的生成设计探索。",
           "layout": "grid-1",
           "mediaNames": [
             "frame_01.png",
