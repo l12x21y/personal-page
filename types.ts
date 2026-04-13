@@ -45,6 +45,7 @@ export interface Project {
   tools?: string[];
   skills?: string[];
   tags: string[];
+  status?: string;
   navSections?: ProjectNavSection[];
   fileUrl?: string; // URL for the file if it's not just an image
   fileType?: 'image' | 'pdf'; // Type of the project asset

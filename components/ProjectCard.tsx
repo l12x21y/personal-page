@@ -182,15 +182,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       )}
 
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold text-gray-900 mb-2 font-mono tracking-widest">
-           <EditableInput 
-                value={project.title}
-                onChange={(val) => onUpdateProject(project.id, 'title', val)}
-                className="text-xl font-bold text-gray-900 w-full"
-                ariaLabel="Project Title"
-                isViewMode={isViewMode}
-            />
-        </h3>
+        <div className="w-full flex items-start justify-between mb-2 gap-3">
+          <h3 className="text-xl font-bold text-gray-900 font-mono tracking-widest flex-1">
+             <EditableInput 
+                  value={project.title}
+                  onChange={(val) => onUpdateProject(project.id, 'title', val)}
+                  className="text-xl font-bold text-gray-900 w-full"
+                  ariaLabel="Project Title"
+                  isViewMode={isViewMode}
+              />
+          </h3>
+          {project.status === 'in progress' && (
+            <span className="whitespace-nowrap inline-block text-xs font-semibold text-gray-800 bg-gray-100 px-3 py-1 rounded-full border border-gray-300 self-start">In progress</span>
+          )}
+        </div>
         <div className="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">
              <EditableTextarea
                 value={project.description}

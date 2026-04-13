@@ -211,19 +211,21 @@ export const generatedPortfolioData: PortfolioData = {
     {
       "id": 1,
       "slug": "Riverside Gallery",
-      "title": "Riverside Gallery",
-      "description": "围绕场地环境的展陈建筑方案，关注流线组织与空间体验。",
+      "title": "Between Light and Shadow",
+      "description": "A small-scale campus intervention that reactivates the riverside space through spatial sequencing and subtle experiential design.",
       "time": "2024.09-2024.10",
       "workType": "Individual",
       "role": "Architecture",
       "tools": [
         "SketchUp",
         "V-Ray",
-        "Procreate"
+        "Procreate",
+        "InDesign"
       ],
       "skills": [
         "Conceptual Design",
-        "Spatial Analysis"
+        "Spatial sequencing",
+        "Perception-driven design"
       ],
       "mediaAssets": [
         {
@@ -348,7 +350,7 @@ export const generatedPortfolioData: PortfolioData = {
           "content": [
             {
               "type": "text",
-              "text": "项目背景、区位与设计出发点。"
+              "text": "The project is located along a riverside space on campus that is frequently passed through but rarely engaged with. Despite its spatial potential, the area lacks clear structure and experiential quality, resulting in limited interaction and short-term use."
             }
           ]
         },
@@ -358,7 +360,7 @@ export const generatedPortfolioData: PortfolioData = {
           "content": [
             {
               "type": "text",
-              "text": "描述空间序列、步行路径与关键体验节点。"
+              "text": "The project is conceived as a minimal volume that contains two contrasting spatial trajectories. Rather than emphasizing form, the design focuses on how light, material, and openness shape different modes of perception."
             },
             {
               "type": "image",
@@ -381,16 +383,28 @@ export const generatedPortfolioData: PortfolioData = {
               "mediaName": "21门厅.jpg"
             },
             {
+              "type": "text",
+              "text": "The other path moves through darker, more enclosed spaces, where light is filtered and the presence of surrounding trees becomes more pronounced. This contrast creates a shift in pace and perception."
+            },
+            {
+              "type": "image",
+              "mediaName": "More-10-16剖透视.jpg"
+            },
+            {
               "type": "image",
               "mediaName": "树.jpg"
             },
             {
               "type": "image",
-              "mediaName": "23上楼视角.jpg"
+              "mediaName": "25连续展厅.jpg"
+            },
+            {
+              "type": "text",
+              "text": "At the central stair, the two experiences converge into a moment of pause and transition. From there, the circulation leads toward a café and extends outward to the landscape, reconnecting the interior journey with the open environment."
             },
             {
               "type": "image",
-              "mediaName": "25连续展厅.jpg"
+              "mediaName": "23上楼视角.jpg"
             },
             {
               "type": "image",
@@ -498,9 +512,10 @@ export const generatedPortfolioData: PortfolioData = {
       ],
       "tags": [
         "Architecture",
-        "Exhibition",
-        "Individual",
-        "Studio"
+        "Minimal",
+        "Sequence",
+        "Light",
+        "Individual"
       ]
     },
     {
@@ -521,6 +536,7 @@ export const generatedPortfolioData: PortfolioData = {
       ],
       "skills": [
         "Environmental Analysis",
+        "Parametric Design",
         "Systems Thinking"
       ],
       "mediaAssets": [
@@ -1484,10 +1500,11 @@ export const generatedPortfolioData: PortfolioData = {
         }
       ],
       "tags": [
-        "Teamwork",
+        "Architecture",
         "Climate",
+        "system",
         "Prototype",
-        "Architecture"
+        "Teamwork"
       ]
     },
     {
@@ -1510,7 +1527,8 @@ export const generatedPortfolioData: PortfolioData = {
       ],
       "skills": [
         "Spatial Analysis",
-        "Generative Design",
+        "Sequence-based Modeling",
+        "Generative Prototyping",
         "Model Training"
       ],
       "mediaAssets": [
@@ -1703,7 +1721,7 @@ export const generatedPortfolioData: PortfolioData = {
           ]
         },
         {
-          "title": "Generative Design",
+          "title": "Generative Prototyping",
           "text": "基于GAN的生成设计探索。",
           "layout": "grid-1",
           "mediaNames": [
@@ -1941,8 +1959,9 @@ export const generatedPortfolioData: PortfolioData = {
       ],
       "tags": [
         "Architecture",
-        "Generative Design",
-        "LLM",
+        "Generative",
+        "Sequence",
+        "Light",
         "Individual"
       ]
     },
@@ -1957,14 +1976,15 @@ export const generatedPortfolioData: PortfolioData = {
       ],
       "role": "APP Designer",
       "tools": [
-        "APP",
+        "Android Studio",
         "python",
         "LLM",
-        "Algorithm"
+        "Figma"
       ],
       "skills": [
-        "Coding",
-        "Systems Thinking"
+        "User Research",
+        "Human-Computer Interaction Design",
+        "System Design Thinking"
       ],
       "mediaAssets": [
         {
@@ -2211,30 +2231,35 @@ export const generatedPortfolioData: PortfolioData = {
         }
       ],
       "tags": [
-        "Individual",
-        "Prototype",
         "HCI",
-        "LLM"
+        "Interaction",
+        "Prototype",
+        "System",
+        "Individual"
       ]
     },
     {
       "id": 5,
       "slug": "Music City",
       "title": "Music City",
-      "description": "Project Music City",
+      "description": "A data-driven urban planning project that identifies potential sites and explores spatial activation through temporary music-based interventions.",
       "time": "2026.3-Present",
       "workType": "Team",
       "role": [
         "Data Analyst",
         "Urban Planner"
       ],
+      "status": "in progress",
       "tools": [
         "Python",
-        "GIS"
+        "GIS",
+        "SPSS",
+        "C-GAN"
       ],
       "skills": [
-        "Programming",
-        "Data Analysis",
+        "Spatial Data Analysis",
+        "Urban Computational Analysis",
+        "Generative Modeling",
         "Data Visualization"
       ],
       "mediaAssets": [
@@ -2397,9 +2422,10 @@ export const generatedPortfolioData: PortfolioData = {
         }
       ],
       "tags": [
-        "Teamwork",
-        "Data Analysis",
-        "Urban Planning"
+        "Urban Planning",
+        "Computation",
+        "Activation",
+        "Teamwork"
       ]
     }
   ],

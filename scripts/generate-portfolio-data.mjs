@@ -484,6 +484,7 @@ function loadProjects(projectRoot, datasetProjectMetaList) {
       time: meta.time || meta.date || '',
       workType: meta.workType || meta.assignmentType || '',
       role: meta.role || meta.projectRole || '',
+      status: typeof meta.status === 'string' && meta.status.trim() ? meta.status.trim() : undefined,
       tools: Array.isArray(meta.tools) ? meta.tools.filter((t) => typeof t === 'string' && t.trim().length > 0) : [],
       skills: Array.isArray(meta.skills) ? meta.skills.filter((s) => typeof s === 'string' && s.trim().length > 0) : [],
       mediaAssets,

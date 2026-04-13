@@ -1,36 +1,39 @@
 [
   {
     "folder": "Riverside Gallery",
-    "title": "Riverside Gallery",
-    "tools": ["SketchUp", "V-Ray", "Procreate"],
-    "skills": ["Conceptual Design", "Spatial Analysis"],
-    "tags": ["Architecture", "Exhibition", "Individual","Studio"],
+    "title": "Between Light and Shadow",
+    "tools": ["SketchUp", "V-Ray", "Procreate","InDesign"],
+    "skills": ["Conceptual Design","Spatial sequencing","Perception-driven design"],
+    "tags": ["Architecture","Minimal","Sequence","Light", "Individual"],
     "time": "2024.09-2024.10",
     "workType": "Individual",
     "role": "Architecture",
-    "description": "围绕场地环境的展陈建筑方案，关注流线组织与空间体验。",
+    "description": "A small-scale campus intervention that reactivates the riverside space through spatial sequencing and subtle experiential design.",
     "cover": "Cover.jpg",
     "navSections": [
       {
         "title": "Background",
         "layout": "grid-3",
         "content": [
-          { "type": "text", "text": "项目背景、区位与设计出发点。" }
+          { "type": "text", "text": "The project is located along a riverside space on campus that is frequently passed through but rarely engaged with. Despite its spatial potential, the area lacks clear structure and experiential quality, resulting in limited interaction and short-term use." }
         ]
       },
       {
         "title": "Experience",
         "layout": "grid-3",
         "content": [
-          { "type": "text", "text": "描述空间序列、步行路径与关键体验节点。" },
+          { "type": "text", "text": "The project is conceived as a minimal volume that contains two contrasting spatial trajectories. Rather than emphasizing form, the design focuses on how light, material, and openness shape different modes of perception." },
           { "type": "image", "mediaName": "Cover.jpg" },
           { "type": "image", "mediaName": "17整体渲染2.jpg" },
           { "type": "image", "mediaName": "18路视角.jpg" },
           { "type": "image", "mediaName": "20入口.jpg" },
           { "type": "image", "mediaName": "21门厅.jpg" },
+          { "type": "text", "text": "The other path moves through darker, more enclosed spaces, where light is filtered and the presence of surrounding trees becomes more pronounced. This contrast creates a shift in pace and perception." },
+          { "type": "image", "mediaName": "More-10-16剖透视.jpg" },
           { "type": "image", "mediaName": "树.jpg" },
-          { "type": "image", "mediaName": "23上楼视角.jpg" },
           { "type": "image", "mediaName": "25连续展厅.jpg" },
+          { "type": "text", "text": "At the central stair, the two experiences converge into a moment of pause and transition. From there, the circulation leads toward a café and extends outward to the landscape, reconnecting the interior journey with the open environment." },
+          { "type": "image", "mediaName": "23上楼视角.jpg" },
           { "type": "image", "mediaName": "26.1咖啡厅2.jpg" }
         ]
       }
@@ -50,8 +53,8 @@
     "folder": "Flexible Climate House",
     "title": "Flexible Climate House",
     "tools": ["Rhino", "Grasshopper","AutoCAD","D5"],
-    "skills": ["Environmental Analysis", "Systems Thinking"],
-    "tags": ["Teamwork", "Climate", "Prototype","Architecture"],
+    "skills": ["Environmental Analysis","Parametric Design","Systems Thinking"],
+    "tags": ["Architecture", "Climate","system", "Prototype","Teamwork"],
     "time": "2024.09-2025.01",
     "workType": ["Team"],
     "role": "Architecture",
@@ -171,8 +174,8 @@
     "folder": "Sea Within",
     "title": "Sea Within",
     "tools": ["Rhino", "D5","python","GAN","LLM"],
-    "skills": ["Spatial Analysis", "Generative Design","Model Training"],
-    "tags": ["Architecture", "Generative Design", "LLM","Individual"],
+    "skills": ["Spatial Analysis","Sequence-based Modeling","Generative Prototyping","Model Training"],
+    "tags": ["Architecture", "Generative","Sequence","Light","Individual"],
     "time": "",
     "workType": "Individual",
     "role": ["Architecture","Engineering"],
@@ -189,7 +192,7 @@
         "mediaNames": ["history.jpg"]
       },
      {
-        "title": "Generative Design",
+        "title": "Generative Prototyping",
         "text": "基于GAN的生成设计探索。",
         "layout": "grid-1",
         "mediaNames": ["frame_01.png","experience.png","frame_02.png"]
@@ -233,9 +236,9 @@
     {
     "folder": "Living Jade",
     "title": "Living Jade",
-    "tools": ["APP", "python","LLM","Algorithm"],
-    "skills": ["Coding", "Systems Thinking"],
-    "tags": ["Individual", "Prototype","HCI","LLM"],
+    "tools": ["Android Studio", "python","LLM","Figma"],
+    "skills": ["User Research","Human-Computer Interaction Design", "System Design Thinking"],
+    "tags": ["HCI","Interaction", "Prototype","System","Individual"],
     "time": "2025.09-2026.01",
     "workType": ["Individual"],
     "role": "APP Designer",
@@ -317,13 +320,14 @@
   {
     "folder": "Music City",
     "title": "Music City",
-    "tools": ["Python", "GIS"],
-    "skills": ["Programming", "Data Analysis", "Data Visualization"],
-    "tags": ["Teamwork", "Data Analysis", "Urban Planning"],
+    "tools": ["Python", "GIS", "SPSS","C-GAN"],
+    "skills": ["Spatial Data Analysis","Urban Computational Analysis","Generative Modeling", "Data Visualization"],
+    "tags": ["Urban Planning", "Computation","Activation","Teamwork"],
     "time": "2026.3-Present",
+    "status": "in progress",
     "workType": "Team",
     "role": ["Data Analyst", "Urban Planner"],
-    "description": "",
+    "description": "A data-driven urban planning project that identifies potential sites and explores spatial activation through temporary music-based interventions.",
     "navSections": [
       {
         "title": "Problem",
